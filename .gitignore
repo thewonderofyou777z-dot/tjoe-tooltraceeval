@@ -17,3 +17,4 @@ reports/geo-manual-report-20*.md
 reports/geo-first-manual-sample-review-20*.md
 reports/geo-first-test-copy-pack-*.md
 examples/*calibrated-local*.json
+examples/ai-visibility-query-suite-v0.3.1*.json

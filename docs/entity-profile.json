@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "profile_id": "tooltraceeval_entity_profile_v0_1_3",
-  "last_synced_with_readme": "v0.1.3-rename-geo-calibration",
-  "last_updated": "2026-06-04",
+  "profile_id": "tooltraceeval_entity_profile_v0_1_4",
+  "last_synced_with_readme": "v0.1.4-boundary-metadata",
+  "last_updated": "2026-06-05",
   "canonical_name": "ToolTraceEval",
   "aliases": [
     "ToolTraceEval",
@@ -48,7 +48,15 @@
     "legal or compliance certification system",
     "proof that an AI agent is safe",
     "industry-wide benchmark",
-    "agent execution framework"
+    "agent execution framework",
+    "hosted SaaS",
+    "online platform",
+    "dashboard",
+    "user portal",
+    "online API",
+    "runtime agent executor",
+    "live tool caller",
+    "web browser"
   ],
   "safety_boundaries": [
     "offline only",
@@ -72,9 +80,26 @@
     "scripts/geo_visibility_eval_runner.py"
   ],
   "github_url": "https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm",
-  "version": "v0.1.3-rename-geo-calibration",
+  "version": "v0.1.4-boundary-metadata",
   "disclaimer": "This profile defines a public-safe draft project entity. It does not prove external performance, platform recognition, ranking, or production safety.",
   "is_not_a_platform": true,
+  "is_hosted_saas": false,
+  "has_dashboard": false,
+  "has_user_portal": false,
+  "has_online_api": false,
+  "executes_agents": false,
+  "runs_live_tool_calls": false,
+  "browses_web": false,
+  "unsupported_claims": [
+    "ToolTraceEval is a hosted SaaS product.",
+    "ToolTraceEval is an online platform.",
+    "ToolTraceEval provides a dashboard or user portal.",
+    "ToolTraceEval exposes an online API.",
+    "ToolTraceEval executes agents at runtime.",
+    "ToolTraceEval calls live external tools.",
+    "ToolTraceEval browses the web.",
+    "ToolTraceEval provides cloud deployment, VPC deployment, Kubernetes deployment, or production monitoring services."
+  ],
   "creator": "tjoe",
   "maintainer": "tjoe"
 }

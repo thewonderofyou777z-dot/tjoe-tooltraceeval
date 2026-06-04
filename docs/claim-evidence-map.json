@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "map_id": "tooltraceeval_claim_evidence_map_v0_1_3",
-  "last_synced_with_readme": "v0.1.3-rename-geo-calibration",
-  "last_updated": "2026-06-04",
+  "map_id": "tooltraceeval_claim_evidence_map_v0_1_4",
+  "last_synced_with_readme": "v0.1.4-boundary-metadata",
+  "last_updated": "2026-06-05",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [
     {
@@ -60,6 +60,14 @@
       "evidence_doc": "README.md",
       "evidence_section": "说明 and 这个项目不是什么",
       "evidence_summary": "The README states that the project is not an SEO ranking tool or GEO ranking guarantee."
+    },
+    {
+      "claim_id": "boundary_no_hosted_platform",
+      "claim": "ToolTraceEval is not a hosted SaaS, online platform, dashboard, user portal, online API, runtime agent executor, live tool caller, or web browser.",
+      "claim_type": "boundary",
+      "evidence_doc": "README.md; llms.txt; docs/entity-profile.json",
+      "evidence_section": "说明 / Deployment boundary / Type / What_It_Is_Not / unsupported_claims",
+      "evidence_summary": "The public docs define ToolTraceEval as a local offline script toolkit and explicitly reject hosted platform, dashboard, portal, online API, runtime execution, live tool call, and web browsing claims."
     }
   ],
   "creator": "tjoe"

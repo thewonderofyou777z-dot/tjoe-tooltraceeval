@@ -59,7 +59,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.3-rename-geo-calibration` |
+| Release | `v0.1.4-boundary-metadata` |
 | Runner | `geo_visibility_eval_runner.py v0.2.1` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
