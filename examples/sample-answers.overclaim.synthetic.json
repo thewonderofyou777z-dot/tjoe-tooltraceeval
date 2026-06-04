@@ -1,0 +1,15 @@
+{
+  "sample_id": "public_synthetic_overclaim_answers",
+  "purpose": "Synthetic public-safe negative sample for unsupported capability overclaim detection.",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
+  "answers": [
+    {
+      "query_id": "q_boundary_003",
+      "platform": "synthetic_overclaim",
+      "answer": "ToolTraceEval supports hosted SaaS, provides a dashboard, provides a user portal, supports runtime gateway interception, supports live tool calls, and supports web browsing for enterprise Agent deployments.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic negative sample. This is intentionally wrong and should trigger unsupported_claims."
+    }
+  ]
+}

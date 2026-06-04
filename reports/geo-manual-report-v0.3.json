@@ -1,23 +1,24 @@
 {
   "runner": "geo_visibility_eval_runner.py",
-  "runner_version": "0.2.1",
-  "run_id": "geo_visibility_eval_20260604_133934",
-  "created_at": "2026-06-04T13:39:34",
+  "runner_version": "0.2.2",
+  "run_id": "geo_visibility_eval_20260605_022259",
+  "created_at": "2026-06-05T02:22:59",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
   "suite_status": "public_sample",
-  "query_count": 9,
-  "answer_count": 9,
+  "query_count": 10,
+  "answer_count": 10,
   "template_path": null,
   "summary": {
-    "answered_count": 9,
-    "average_total_score": 6.22,
+    "answered_count": 10,
+    "average_total_score": 6.2,
     "grade_counts": {
-      "partial": 9
+      "partial": 10
     },
     "ready_for_external_claim": false,
     "safety_blocked_count": 0,
     "non_public_ref_count": 0,
     "hallucination_watch_count": 0,
+    "unsupported_claim_count": 0,
     "track_summary": {
       "domain_concept_discovery": {
         "answered_count": 3,
@@ -25,7 +26,8 @@
         "grade_counts": {
           "partial": 3
         },
-        "hallucination_watch_count": 0
+        "hallucination_watch_count": 0,
+        "unsupported_claim_count": 0
       },
       "brand_entity_exact": {
         "answered_count": 2,
@@ -33,7 +35,8 @@
         "grade_counts": {
           "partial": 2
         },
-        "hallucination_watch_count": 0
+        "hallucination_watch_count": 0,
+        "unsupported_claim_count": 0
       },
       "comparison": {
         "answered_count": 2,
@@ -41,15 +44,17 @@
         "grade_counts": {
           "partial": 2
         },
-        "hallucination_watch_count": 0
+        "hallucination_watch_count": 0,
+        "unsupported_claim_count": 0
       },
       "safety_boundary": {
-        "answered_count": 2,
+        "answered_count": 3,
         "average_total_score": 6.0,
         "grade_counts": {
-          "partial": 2
+          "partial": 3
         },
-        "hallucination_watch_count": 0
+        "hallucination_watch_count": 0,
+        "unsupported_claim_count": 0
       }
     },
     "decision": "internal_eval_only"
@@ -90,6 +95,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic domain answer."
     },
@@ -125,6 +132,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic trace answer."
     },
@@ -161,6 +170,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic approval answer."
     },
@@ -187,7 +198,6 @@
       ],
       "entity_hits": [
         "ToolTraceEval",
-        "ToolTraceEval",
         "Agent Eval Harness",
         "Agent Output Adapter",
         "Local Eval Runner",
@@ -199,6 +209,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic entity definition answer."
     },
@@ -238,6 +250,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic component answer."
     },
@@ -274,6 +288,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic comparison answer."
     },
@@ -308,6 +324,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic trace versus answer answer."
     },
@@ -342,6 +360,8 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic boundary answer."
     },
@@ -376,16 +396,57 @@
       "safety_findings": [],
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
       "citation_note": null,
       "notes": "Synthetic release-stop answer."
+    },
+    {
+      "query_id": "q_boundary_003",
+      "platform": "synthetic",
+      "group_id": "g04_safety_boundary",
+      "scoring_track": "safety_boundary",
+      "scores": {
+        "mention_score": 3,
+        "understanding_score": 3,
+        "citation_score": 0,
+        "conversion_score": 0
+      },
+      "total_score": 6,
+      "max_total": 12,
+      "grade": "partial",
+      "expected_hits": [
+        "No SaaS",
+        "No Dashboard Or Portal",
+        "No Runtime Execution"
+      ],
+      "entity_hits": [
+        "ToolTraceEval",
+        "local offline",
+        "not SaaS",
+        "no dashboard",
+        "no online API",
+        "does not execute agents"
+      ],
+      "manual_override_fields": [],
+      "has_answer": true,
+      "safety_blocked": false,
+      "safety_findings": [],
+      "hallucination_hits": [],
+      "hallucination_watch_triggered": false,
+      "unsupported_claim_hits": [],
+      "unsupported_claim_triggered": false,
+      "citation_note": null,
+      "notes": "Synthetic unsupported-capability boundary answer."
     }
   ],
   "scoring_model": {
-    "version": "0.2.1",
+    "version": "0.2.2",
     "note": "Scores are deterministic heuristic indicators for internal evaluation, not proof of real GEO visibility.",
     "track_rule": "brand_entity_exact and domain_concept_discovery are reported separately when scoring_track is present.",
     "citation_rule": "Only public http(s) source_refs count toward citation_score.",
-    "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review."
+    "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
+    "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0."
   },
   "safety": {
     "no_login": true,

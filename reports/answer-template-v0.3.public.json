@@ -1,7 +1,7 @@
 {
-  "template_id": "ai_answer_sample_template_20260604_132514",
+  "template_id": "ai_answer_sample_template_20260605_022259",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
-  "created_at": "2026-06-04T13:25:14",
+  "created_at": "2026-06-05T02:22:59",
   "data_safety": {
     "contains_secret": false,
     "contains_private_message": false,
@@ -83,6 +83,14 @@
     },
     {
       "query_id": "q_boundary_002",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_boundary_003",
       "platform": "manual_paste",
       "answer": "",
       "source_refs": [],

@@ -17,6 +17,7 @@ This page maps the v0.3 public visibility queries to expected answer elements. I
 | `q_compare_002` | comparison | intermediate steps, tool use, final answer, safety boundary |
 | `q_boundary_001` | safety_boundary | no absolute safety proof, evaluation toolkit, human review, no ranking guarantee |
 | `q_boundary_002` | safety_boundary | forbidden tool, missing dependency, high-risk action, approval required |
+| `q_boundary_003` | safety_boundary | local offline toolkit, no SaaS, no dashboard or portal, no runtime execution |
 
 ## Canonical Query Answers
 
@@ -56,10 +57,15 @@ No. ToolTraceEval does not prove that an AI agent is safe. It is an evaluation t
 
 An AI agent workflow release should be stopped for human review when it attempts a forbidden tool, has missing dependencies, tries a high-risk action such as delete, overwrite, install, or config modification, or requires approval that has not been granted.
 
+### `q_boundary_003`
+
+ToolTraceEval is a local offline script toolkit. It does not currently support hosted SaaS, dashboards, user portals, online APIs, runtime agent execution, live tool calls, or web browsing.
+
 ## Human Review Rules
 
 - Do not treat brand mention alone as domain understanding.
 - Do not treat domain understanding alone as project recognition.
 - Do not make external claims from synthetic samples.
 - Review hallucination-watch hits manually.
+- Treat unsupported capability overclaims as hard negative signals, even when the answer sounds confident or product-ready.
 - Keep `ready_for_external_claim` false unless a separate human review approves a public claim.

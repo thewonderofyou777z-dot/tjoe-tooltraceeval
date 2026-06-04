@@ -55,7 +55,7 @@ After publishing, delete the local token file.
 ## Verify Remote
 
 ```bash
-git ls-remote https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm.git refs/heads/main
+git ls-remote https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval.git refs/heads/main
 ```
 
 Then confirm these files render on GitHub:

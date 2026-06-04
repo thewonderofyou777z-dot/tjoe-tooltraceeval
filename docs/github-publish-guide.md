@@ -79,13 +79,13 @@ Add ToolTraceEval rename and GEO calibration v0.1.3
 
 Open these URLs and confirm they render:
 
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm`
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm/blob/main/llms.txt`
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm/blob/main/docs/ai-answer-card.md`
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm/blob/main/docs/entity-profile.json`
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm/blob/main/docs/claim-evidence-map.json`
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm/blob/main/docs/geo-test-plan.md`
-- `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm/blob/main/docs/post-upload-verification.md`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/llms.txt`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/ai-answer-card.md`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/entity-profile.json`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/claim-evidence-map.json`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/geo-test-plan.md`
+- `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/post-upload-verification.md`
 
 ## First GEO Test Readiness
 

@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.3-rename-geo-calibration` public-safe draft  
+> Status: `v0.1.5-practical-overclaim-watch` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
@@ -31,6 +31,7 @@ flowchart TD
   A --> D["Local Eval Runner"]
   A --> E["AI Visibility Query Suite"]
   A --> F["Rejected Cases"]
+  A --> M["Unsupported Claim Watch"]
   B --> G["Eval Case Schema"]
   B --> H["Trace Schema"]
   C --> I["Normalized Output"]
@@ -60,6 +61,10 @@ An offline runner that reads JSON suites and answer samples, then produces repor
 ### AI Visibility Query Suite
 
 A query suite that separates domain understanding from brand/entity recognition.
+
+### Unsupported Claim Watch
+
+A deterministic check that flags answers claiming ToolTraceEval currently supports capabilities it does not provide, such as hosted SaaS, dashboard, user portal, online API, runtime agent execution, live tool calls, or web browsing.
 
 ### AI Answer Card
 

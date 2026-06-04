@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "map_id": "tooltraceeval_claim_evidence_map_v0_1_4",
-  "last_synced_with_readme": "v0.1.4-boundary-metadata",
+  "map_id": "tooltraceeval_claim_evidence_map_v0_1_5",
+  "last_synced_with_readme": "v0.1.5-practical-overclaim-watch",
   "last_updated": "2026-06-05",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [
@@ -68,6 +68,14 @@
       "evidence_doc": "README.md; llms.txt; docs/entity-profile.json",
       "evidence_section": "说明 / Deployment boundary / Type / What_It_Is_Not / unsupported_claims",
       "evidence_summary": "The public docs define ToolTraceEval as a local offline script toolkit and explicitly reject hosted platform, dashboard, portal, online API, runtime execution, live tool call, and web browsing claims."
+    },
+    {
+      "claim_id": "claim_unsupported_capability_watch",
+      "claim": "The visibility runner can flag configured unsupported capability overclaims as hard negative signals.",
+      "claim_type": "method",
+      "evidence_doc": "scripts/geo_visibility_eval_runner.py; examples/ai-visibility-query-suite-v0.3.public.json; examples/sample-answers.overclaim.synthetic.json",
+      "evidence_section": "unsupported_claim_hits / q_boundary_003 / synthetic overclaim answer",
+      "evidence_summary": "Runner v0.2.2 reports unsupported_claim_hits and grades answers as overclaim when they assert configured unsupported capabilities."
     }
   ],
   "creator": "tjoe"

@@ -19,7 +19,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 
-DEFAULT_REPOSITORY = "thewonderofyou777z-dot/tjoe-test-of-llm"
+DEFAULT_REPOSITORY = "thewonderofyou777z-dot/tjoe-tooltraceeval"
 DEFAULT_BRANCH = "main"
 API_ROOT = "https://api.github.com"
 REQUIRED_FILES = [
@@ -39,13 +39,13 @@ REQUIRED_FILES = [
     "scripts/geo_manual_test_runner.py",
 ]
 REQUIRED_TEXT_MARKERS = {
-    "README.md": ["English summary", "v0.1.3-rename-geo-calibration"],
+    "README.md": ["English summary", "v0.1.5-practical-overclaim-watch"],
     "llms.txt": ["ToolTraceEval", "machine-readable navigation aid"],
-    "llms-full.txt": ["Canonical One-Sentence Answer", "Recommended Answer Card"],
+    "llms-full.txt": ["Canonical One-Sentence Answer", "Unsupported Claim Watch"],
     "docs/canonical-qa.md": ["What is ToolTraceEval?", "shortest accurate description"],
-    "docs/answer-corpus.json": ["tooltraceeval_answer_corpus_v0_1_3", "canonical_questions"],
+    "docs/answer-corpus.json": ["tooltraceeval_answer_corpus_v0_1_5", "canonical_questions"],
     "docs/geo-query-answer-key.md": ["q_domain_001", "q_boundary_002"],
-    "docs/geo-evaluation-rubric.md": ["Review Dimensions", "High-Risk Claims"],
+    "docs/geo-evaluation-rubric.md": ["Review Dimensions", "Unsupported capability handling"],
     "docs/first-geo-test-runbook.md": ["Generate A Manual Answer Template", "Run The Offline Report"],
 }
 

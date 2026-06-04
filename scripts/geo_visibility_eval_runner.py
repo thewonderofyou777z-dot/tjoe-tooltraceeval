@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.1
+Version: 0.2.2
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -235,6 +235,40 @@ def hallucination_hits(text: str, query: dict[str, Any]) -> list[str]:
     return keyword_hits(text, [str(term) for term in watch_terms])
 
 
+def unsupported_claim_hits(text: str, query: dict[str, Any]) -> list[dict[str, str]]:
+    claims = query.get("unsupported_claims", [])
+    if not isinstance(claims, list):
+        return []
+
+    lower_text = text.lower()
+    hits: list[dict[str, str]] = []
+    for claim in claims:
+        if isinstance(claim, dict):
+            claim_id = str(claim.get("claim_id") or claim.get("name") or "unsupported_claim")
+            terms = claim.get("terms", [])
+            failure_class = str(claim.get("failure_class") or claim_id)
+            if not isinstance(terms, list):
+                continue
+            matched = [str(term) for term in terms if str(term).lower() in lower_text]
+            if matched:
+                hits.append(
+                    {
+                        "claim_id": claim_id,
+                        "failure_class": failure_class,
+                        "matched_terms": ", ".join(matched),
+                    }
+                )
+        elif str(claim).lower() in lower_text:
+            hits.append(
+                {
+                    "claim_id": str(claim),
+                    "failure_class": "unsupported_claim",
+                    "matched_terms": str(claim),
+                }
+            )
+    return hits
+
+
 def public_source_refs(refs: Any) -> list[str]:
     if not isinstance(refs, list):
         return []
@@ -327,7 +361,9 @@ def citation_note_for(answer: dict[str, Any]) -> str | None:
 
 def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any]:
     findings = safety_findings(answer)
-    hallucinations = hallucination_hits(str(answer.get("answer", "")), query)
+    answer_text = str(answer.get("answer", ""))
+    hallucinations = hallucination_hits(answer_text, query)
+    unsupported_claims = unsupported_claim_hits(answer_text, query)
     if any(finding.startswith("sensitive_pattern") for finding in findings):
         return {
             "query_id": query.get("query_id"),
@@ -346,6 +382,8 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
             "safety_findings": findings,
             "hallucination_hits": hallucinations,
             "hallucination_watch_triggered": bool(hallucinations),
+            "unsupported_claim_hits": unsupported_claims,
+            "unsupported_claim_triggered": bool(unsupported_claims),
             "citation_note": citation_note_for(answer),
             "notes": answer.get("notes", ""),
         }
@@ -362,7 +400,10 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
 
     total = sum(scores.values())
     max_total = 12
-    if total >= 9:
+    if unsupported_claims:
+        total = 0
+        grade = "overclaim"
+    elif total >= 9:
         grade = "strong"
     elif total >= 6:
         grade = "partial"
@@ -388,6 +429,8 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
         "safety_findings": findings,
         "hallucination_hits": hallucinations,
         "hallucination_watch_triggered": bool(hallucinations),
+        "unsupported_claim_hits": unsupported_claims,
+        "unsupported_claim_triggered": bool(unsupported_claims),
         "citation_note": citation_note_for(answer),
         "notes": answer.get("notes", ""),
     }
@@ -415,6 +458,7 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
         if "non_public_source_ref_ignored" in item.get("safety_findings", [])
     )
     hallucination_watch_count = sum(1 for item in answered if item.get("hallucination_watch_triggered"))
+    unsupported_claim_count = sum(1 for item in answered if item.get("unsupported_claim_triggered"))
     track_summary: dict[str, dict[str, Any]] = {}
     for item in answered:
         track = str(item.get("scoring_track") or DEFAULT_SCORING_TRACK)
@@ -425,6 +469,7 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
                 "average_total_score": 0,
                 "grade_counts": {},
                 "hallucination_watch_count": 0,
+                "unsupported_claim_count": 0,
             },
         )
         bucket["answered_count"] += 1
@@ -432,6 +477,8 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
         bucket["grade_counts"][item["grade"]] = bucket["grade_counts"].get(item["grade"], 0) + 1
         if item.get("hallucination_watch_triggered"):
             bucket["hallucination_watch_count"] += 1
+        if item.get("unsupported_claim_triggered"):
+            bucket["unsupported_claim_count"] += 1
     for bucket in track_summary.values():
         if bucket["answered_count"]:
             bucket["average_total_score"] = round(
@@ -446,6 +493,7 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
         "safety_blocked_count": blocked_count,
         "non_public_ref_count": non_public_ref_count,
         "hallucination_watch_count": hallucination_watch_count,
+        "unsupported_claim_count": unsupported_claim_count,
         "track_summary": track_summary,
         "decision": "internal_eval_only",
     }
@@ -480,6 +528,7 @@ def build_report(
             "track_rule": "brand_entity_exact and domain_concept_discovery are reported separately when scoring_track is present.",
             "citation_rule": "Only public http(s) source_refs count toward citation_score.",
             "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
+            "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
         },
         "safety": {
             "no_login": True,

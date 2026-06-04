@@ -1,13 +1,13 @@
 # Release Readiness
 
-Status: ready for GEO readiness draft release.
+Status: ready for practical overclaim-watch release.
 
-Date: 2026-06-04  
+Date: 2026-06-05  
 Package: `tooltraceeval`  
-Release target: `v0.1.3-rename-geo-calibration`
+Release target: `v0.1.5-practical-overclaim-watch`
 
 Published commit: see current `main` after publishing  
-Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm`
+Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval`
 
 ## Scope
 
@@ -16,6 +16,7 @@ This package is a public-safe starter release for evaluating AI agent workflows 
 It includes:
 
 - an offline deterministic GEO / AI Visibility runner
+- unsupported capability overclaim detection
 - a public-safe Agent Eval Harness example
 - synthetic query and answer examples
 - synthetic agent workflow eval cases
@@ -39,6 +40,7 @@ It includes:
 - a first GEO test runbook
 - a manual GEO answer collection runner
 - a v0.3 public answer collection template
+- a public-safe synthetic overclaim sample
 - a GitHub Actions smoke workflow
 - FAQ schema draft
 - contribution, security, release, and license documents
@@ -53,6 +55,7 @@ It does not include:
 - local-only workspace paths
 - private tool configuration
 - claims that the system proves ranking, GEO performance, model truthfulness, or absolute AI safety
+- claims that the system provides hosted SaaS, dashboard, portal, online API, runtime gateway, live tool calls, or web browsing
 
 ## Review Result
 
@@ -66,7 +69,7 @@ Result:
 - P0 verification: passed
 - remaining blockers: none
 - ready_to_share_publicly: yes
-- recommended release label: `v0.1.3-rename-geo-calibration`
+- recommended release label: `v0.1.5-practical-overclaim-watch`
 - public project name: `ToolTraceEval`
 - creator / maintainer: `tjoe`
 
@@ -83,7 +86,9 @@ Final checks passed:
 - JSON validation passed for `docs/entity-profile.json`
 - JSON validation passed for `docs/claim-evidence-map.json`
 - JSON validation passed for `examples/ai-visibility-query-suite-v0.3.public.json`
+- JSON validation passed for `examples/sample-answers.overclaim.synthetic.json`
 - synthetic GEO runner smoke test passed with `--ci-smoke`
+- synthetic overclaim smoke test produced grade `overclaim`
 - Agent Eval Harness consistency check passed
 - CI workflow syntax and runner py_compile checks passed locally
 - package file list contains no generated `__pycache__`
@@ -94,6 +99,7 @@ Final checks passed:
 - All included reports use synthetic examples only.
 - Scores are diagnostic signals, not proof of real GEO visibility.
 - Claim Watch flags suspicious keyword patterns; it does not verify truth by itself.
+- Unsupported Claim Watch is deterministic keyword/rule matching; it is a practical guardrail, not a general hallucination detector.
 - `must_stop_release` is a declaration field, not an automatic release gate.
 - Any real platform answers or real agent traces should be reviewed and redacted before publishing.
 

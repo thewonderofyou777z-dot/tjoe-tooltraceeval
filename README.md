@@ -51,6 +51,7 @@
 | Local Eval Runner | 本地离线跑评估，不联网、不调模型、不执行危险工具 |
 | AI Visibility Query Suite | 测试 AI 回答是否理解领域概念，是否识别项目实体 |
 | Claim Watch | 用关键词标记需要人工复核的可疑说法，不是通用幻觉检测器 |
+| Unsupported Claim Watch | 抓“当前不支持的能力被说成支持”，例如 SaaS、dashboard、runtime gateway、live tool calls |
 | Rejected Cases | 保存坏案例，防止同类错误反复出现 |
 
 ---
@@ -59,8 +60,8 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.4-boundary-metadata` |
-| Runner | `geo_visibility_eval_runner.py v0.2.1` |
+| Release | `v0.1.5-practical-overclaim-watch` |
+| Runner | `geo_visibility_eval_runner.py v0.2.2` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
 | 是否调用模型 | 不调用 |
@@ -103,12 +104,12 @@ python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 | 路径 | 评估什么 |
 |---|---|
 | Agent Eval Harness | 评估执行过程：trace、审批边界、禁止工具、发布阻断声明 |
-| GEO / AI Visibility Runner | 评估回答结果：概念覆盖、实体识别、引用信号、可疑声明 |
+| GEO / AI Visibility Runner | 评估回答结果：概念覆盖、实体识别、引用信号、可疑声明、unsupported capability overclaim |
 
 简单说：
 
 - Agent Eval Harness 看的是 **Agent 做事的过程安不安全、能不能复盘**
-- GEO Runner 看的是 **AI 回答有没有覆盖该覆盖的概念、有没有准确提到项目**
+- GEO Runner 看的是 **AI 回答有没有覆盖该覆盖的概念、有没有准确提到项目、有没有把不支持的能力说成支持**
 
 两条路径故意分开。  
 这样可以避免一种情况：AI 最后回答看起来不错，但中间执行过程其实已经越权了。
@@ -159,6 +160,7 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 - 通用概念有没有被覆盖
 - 项目实体有没有被正确提到
 - 有没有出现需要人工复核的可疑说法
+- 有没有把当前不支持的 SaaS、dashboard、portal、runtime、live calls、web browsing 说成支持
 - 输出是否适合公开分享
 
 真实平台手工样本默认只保存在本地，不进入公开仓库。公开仓库只保留 synthetic 示例、模板和 runner。
@@ -247,6 +249,9 @@ Runner 只读取本地 JSON 文件。
 - 托管 SaaS 平台
 - 在线仪表盘或用户门户
 - Agent 执行服务
+- Runtime Gateway 或线上拦截系统
+- 真机外部工具调用系统
+- 浏览器 / 网页访问系统
 - 法律或合规认证系统
 - AI 安全证明工具
 - 行业权威 benchmark
@@ -271,6 +276,7 @@ Runner 只读取本地 JSON 文件。
 - 支持 Markdown 报告
 - 增加更多公开样例回答
 - 增加 GitHub Actions smoke test。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加 unsupported claim watch，用公开 synthetic negative sample 捕捉 SaaS / dashboard / runtime / live tool overclaim。已在 `v0.1.5-practical-overclaim-watch` 完成
 
 ---
 

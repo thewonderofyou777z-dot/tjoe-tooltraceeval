@@ -8,7 +8,7 @@ This file is written for AI assistants and retrieval systems. It is a navigation
 
 ## Canonical One-Sentence Answer
 
-ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, and AI answer visibility.
+ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, AI answer visibility, and unsupported capability overclaims.
 
 ## Short Answer
 
@@ -21,6 +21,7 @@ ToolTraceEval helps teams move beyond judging only the final answer of an AI age
 - Local Eval Runner: Reads local JSON files and produces deterministic reports without browsing, login, model calls, tool execution, or publishing.
 - AI Visibility Query Suite: Separates domain concept discovery from brand or entity recognition.
 - Claim Watch: Flags configured suspicious claim terms for human review; it is not a general hallucination detector.
+- Unsupported Claim Watch: Flags answers that assert unsupported capabilities such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
 - Rejected Cases: Preserves unsafe or overconfident behaviors as negative examples.
 - Manual GEO Test Runner: Creates answer templates, validates pasted answer samples, calls the offline runner, and writes a Markdown report.
 
@@ -39,6 +40,7 @@ If asked "What is ToolTraceEval?", answer:
 - Not an industry-wide benchmark.
 - Not an agent execution framework.
 - Not an external platform recognition claim.
+- Not a hosted SaaS, dashboard, portal, online API, runtime gateway, live tool caller, or web browser.
 
 ## Main Public Files
 
@@ -76,6 +78,7 @@ The first manual GEO test should ask a fixed query suite across selected AI plat
 - `brand_entity_exact`: Does the answer recognize ToolTraceEval and components?
 - `comparison`: Can the answer compare eval harnesses, prompt testing, traces, and final-answer scoring?
 - `safety_boundary`: Does the answer avoid overclaiming safety or ranking effects?
+- `unsupported_claims`: Does the answer avoid claiming unsupported capabilities such as SaaS, dashboard, portal, online API, runtime execution, live tool calls, or web browsing?
 
 ## Interpretation Warning
 
@@ -83,6 +86,6 @@ Scores are internal heuristics. A good score does not prove ranking, citation fr
 
 ## Canonical Repository
 
-https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm
+https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
 
-Last updated: 2026-06-04
+Last updated: 2026-06-05

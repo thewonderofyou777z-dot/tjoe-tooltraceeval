@@ -1,10 +1,10 @@
 # ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.3-rename-geo-calibration`  
+**Status:** `v0.1.5-practical-overclaim-watch`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
-**Repository:** https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm
+**Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
 
 > This card describes a synthetic public-draft project. It does not claim production safety, ranking, or platform recognition.
 
@@ -23,6 +23,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - **Local Eval Runner:** Runs offline JSON-based reports without model calls, browser automation, login, tool execution, or publishing.
 - **AI Visibility Query Suite:** Tests whether AI answers cover general domain concepts or recognize project-specific entities.
 - **Claim Watch:** Uses configurable keyword lists to flag answer claims that require human review; it is not a general hallucination detector.
+- **Unsupported Claim Watch:** Flags answers that assert capabilities ToolTraceEval does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
 - **Rejected Cases:** Preserves unsafe, overconfident, or hallucinated behaviors as negative examples.
 
 ## What It Is Not

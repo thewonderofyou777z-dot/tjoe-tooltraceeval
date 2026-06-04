@@ -1,5 +1,39 @@
 # Release Notes
 
+## v0.1.5-practical-overclaim-watch
+
+Adds a practical unsupported capability watch layer for AI visibility testing.
+
+### Added
+
+- `unsupported_claims` support in the public query suite.
+- `unsupported_claim_hits` and `unsupported_claim_triggered` in runner output.
+- `overclaim` grade for answers that assert explicitly unsupported capabilities.
+- Public-safe synthetic negative sample: `examples/sample-answers.overclaim.synthetic.json`.
+- New boundary query `q_boundary_003` for hosted SaaS, dashboard, portal, online API, runtime execution, live tool calls, and web browsing.
+
+### Updated
+
+- Runner version updated to `0.2.2`.
+- Manual Markdown reports now show unsupported claim counts.
+- Rubric, answer corpus, entity profile, and claim-evidence map now describe unsupported capability overclaims.
+
+### Validation
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.synthetic.json \
+  --output reports/example-report.synthetic.json \
+  --overwrite --ci-smoke
+
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.overclaim.synthetic.json \
+  --output /tmp/tooltraceeval-overclaim-smoke.json \
+  --overwrite --ci-smoke
+```
+
 ## v0.1.3-rename-geo-calibration
 
 Renames the public project identity to **ToolTraceEval**, adds `tjoe` as the creator/maintainer identity, and clarifies that real platform answer samples are local-only evidence.

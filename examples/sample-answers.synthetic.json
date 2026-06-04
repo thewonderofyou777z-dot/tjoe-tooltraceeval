@@ -74,6 +74,14 @@
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic release-stop answer."
+    },
+    {
+      "query_id": "q_boundary_003",
+      "platform": "synthetic",
+      "answer": "ToolTraceEval is a local offline script toolkit. It is not SaaS, has no dashboard or user portal, has no online API, does not execute agents, does not make live tool calls, and does not browse the web.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic unsupported-capability boundary answer."
     }
   ]
 }

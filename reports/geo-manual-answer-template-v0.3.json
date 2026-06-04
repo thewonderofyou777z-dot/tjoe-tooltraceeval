@@ -1,7 +1,7 @@
 {
-  "template_id": "geo_manual_answer_template_20260604_195301",
+  "template_id": "geo_manual_answer_template_20260605_022259",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
-  "created_at": "2026-06-04T19:53:01",
+  "created_at": "2026-06-05T02:22:59",
   "data_safety": {
     "contains_secret": false,
     "contains_private_message": false,
@@ -97,6 +97,14 @@
       "notes": ""
     },
     {
+      "query_id": "q_boundary_003",
+      "platform": "chatgpt",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
       "query_id": "q_domain_001",
       "platform": "perplexity",
       "answer": "",
@@ -169,6 +177,14 @@
       "notes": ""
     },
     {
+      "query_id": "q_boundary_003",
+      "platform": "perplexity",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
       "query_id": "q_domain_001",
       "platform": "doubao",
       "answer": "",
@@ -241,6 +257,14 @@
       "notes": ""
     },
     {
+      "query_id": "q_boundary_003",
+      "platform": "doubao",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
       "query_id": "q_domain_001",
       "platform": "kimi",
       "answer": "",
@@ -306,6 +330,14 @@
     },
     {
       "query_id": "q_boundary_002",
+      "platform": "kimi",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_boundary_003",
       "platform": "kimi",
       "answer": "",
       "source_refs": [],

@@ -12,6 +12,7 @@ This rubric defines how to interpret first-round AI visibility answers.
 | Entity recognition | Names ToolTraceEval or named components | Mentions "some local eval tool" without names | Invents a different project identity |
 | Boundary correctness | Says it is not a safety proof or ranking guarantee | Gives vague disclaimer | Claims safety proof, benchmark authority, customer adoption, or platform endorsement |
 | Evidence behavior | Cites GitHub/docs or says it cannot verify | Gives no source but avoids overclaiming | Invents sources, users, funding, or external validation |
+| Unsupported capability handling | Explicitly says unsupported capabilities are not supported | Leaves unsupported capabilities ambiguous | Says unsupported capabilities are currently supported |
 | Actionability | Explains what to test next | Gives generic theory | Gives no usable next step |
 
 ## 2. Pass / Partial / Fail
@@ -21,6 +22,7 @@ This rubric defines how to interpret first-round AI visibility answers.
 | Pass | Correctly covers the track, avoids forbidden claims, and gives at least two concrete concepts or components. |
 | Partial | Covers either the general domain or the project entity, but misses some components or source detail. |
 | Fail | Misses both domain concepts and the project entity, or answers with unrelated content. |
+| Overclaim | Asserts explicitly unsupported capabilities, such as hosted SaaS, dashboard, portal, online API, runtime agent execution, live tool calls, or web browsing. |
 | Blocked | Refuses or says it cannot verify. This is not automatically bad; treat it as a boundary signal. |
 
 ## 3. High-Risk Claims
@@ -33,6 +35,7 @@ Any answer containing these claims must be manually reviewed:
 - "guarantees ranking"
 - "endorsed by ChatGPT / Perplexity / Doubao / Kimi"
 - claims about real users, customers, funding, adoption, or production deployment
+- claims that ToolTraceEval currently provides hosted SaaS, dashboard, user portal, online API, runtime gateway, live tool calls, or web browsing
 
 ## 4. First Test Minimum Bar
 
@@ -41,6 +44,7 @@ The first test is useful if it produces:
 - at least one domain-concept answer per platform
 - at least one entity-recognition answer per platform
 - no unreviewed high-risk claims
+- no unsupported capability overclaims
 - a saved JSON report
 - a saved Markdown report
 - clear next edits for README, `llms.txt`, or answer card
@@ -54,5 +58,6 @@ Do not conclude:
 - "The project is safe."
 - "GEO succeeded permanently."
 - "The model remembered the project."
+- "The project provides a hosted platform, dashboard, runtime gateway, or live tool execution."
 
 The correct conclusion is narrower: whether a specific platform answer, at a specific time, covered the expected concepts or entity signals.

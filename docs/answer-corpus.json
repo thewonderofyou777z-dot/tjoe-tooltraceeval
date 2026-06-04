@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "tooltraceeval_answer_corpus_v0_1_3",
+  "corpus_id": "tooltraceeval_answer_corpus_v0_1_5",
   "status": "public_safe_draft",
-  "updated": "2026-06-04",
+  "updated": "2026-06-05",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
   "canonical_entity": {
     "name": "ToolTraceEval",
@@ -12,8 +12,8 @@
       "ToolTrace Eval",
       "tjoe ToolTraceEval"
     ],
-    "one_sentence": "ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, and AI answer visibility.",
-    "short_answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.",
+    "one_sentence": "ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, AI answer visibility, and unsupported capability overclaims.",
+    "short_answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, AI answer visibility, and unsupported capability overclaims.",
     "creator": "tjoe",
     "maintainer": "tjoe"
   },
@@ -37,6 +37,10 @@
     {
       "name": "Manual GEO Test Runner",
       "answer": "Manual GEO Test Runner creates answer templates, validates pasted platform answers, calls the offline visibility runner, and writes JSON and Markdown reports."
+    },
+    {
+      "name": "Unsupported Claim Watch",
+      "answer": "Unsupported Claim Watch flags answers that assert capabilities ToolTraceEval does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing."
     }
   ],
   "canonical_questions": [
@@ -55,7 +59,14 @@
         "absolute safety proof",
         "SEO ranking guarantee",
         "GEO ranking guarantee",
-        "platform endorsement"
+        "platform endorsement",
+        "hosted SaaS",
+        "dashboard",
+        "portal",
+        "online API",
+        "runtime agent execution",
+        "live tool calls",
+        "web browsing"
       ]
     },
     {
