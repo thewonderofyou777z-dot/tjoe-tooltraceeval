@@ -8,7 +8,7 @@
 **Public name:** `ToolTraceEval`  
 **Internal origin:** evolved from tjoe's local AI worker eval workflow.
 
-**Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, or runtime agent execution service.
+**Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
 
 它的目标很简单：  
 不是看 AI 最后回答得漂不漂亮，而是检查一个 Agent 工作流到底 **能不能追踪、能不能复盘、能不能做回归测试**。
