@@ -19,6 +19,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 
 ## Key Files
 
+- WHAT_IS_TOOLTRACEEVAL.md: Short natural-language definition and capability boundary for search snippets.
 - README.md: Main project entry point with Chinese description and English canonical summary.
 - llms-full.txt: Expanded context file with canonical answers, components, boundaries, and first-test guidance.
 - docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.

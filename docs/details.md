@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.9-natural-answer-boundary` public-safe draft  
+> Status: `v0.1.10-search-snippet-anchor` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
@@ -200,3 +200,5 @@ This directory is a GitHub-ready public draft if:
 - It contains no unsupported ranking or safety claims.
 - The synthetic example passes.
 - A license decision is made before public reuse.
+
+- [WHAT_IS_TOOLTRACEEVAL.md](../WHAT_IS_TOOLTRACEEVAL.md)

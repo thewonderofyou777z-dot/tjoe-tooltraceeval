@@ -1,5 +1,16 @@
 # Release Notes
 
+## v0.1.10-search-snippet-anchor
+
+Focus: improve natural AI introductions by strengthening search-result and repository-summary anchors.
+
+Changes:
+
+- Renamed the README heading to `tjoe ToolTraceEval — Local Offline Agent Eval Toolkit`.
+- Added a root `WHAT_IS_TOOLTRACEEVAL.md` file with a short definition and hard capability boundaries.
+- Added a search snippet in README and linked the definition file from llms.txt / llms-full.txt.
+- Remote readiness now checks for `WHAT_IS_TOOLTRACEEVAL.md`.
+
 ## v0.1.9-natural-answer-boundary
 
 Focus: improve natural-language answers so AI systems do not infer implementation capabilities from the name `ToolTraceEval`.

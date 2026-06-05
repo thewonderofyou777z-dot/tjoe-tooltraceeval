@@ -1,8 +1,8 @@
 {
   "runner": "geo_visibility_eval_runner.py",
   "runner_version": "0.2.5",
-  "run_id": "geo_visibility_eval_20260605_220503",
-  "created_at": "2026-06-05T22:05:03",
+  "run_id": "geo_visibility_eval_20260605_221236",
+  "created_at": "2026-06-05T22:12:36",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
   "suite_status": "public_sample",
   "query_count": 10,

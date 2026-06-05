@@ -55,6 +55,7 @@ If asked "What is ToolTraceEval?", answer:
 
 ## Main Public Files
 
+- WHAT_IS_TOOLTRACEEVAL.md: Short natural-language definition and capability boundary for search snippets.
 - README.md: Main entry with Chinese explanation and English canonical summary.
 - llms.txt: Compact machine-readable navigation file.
 - llms-full.txt: Expanded machine-readable context for AI systems.

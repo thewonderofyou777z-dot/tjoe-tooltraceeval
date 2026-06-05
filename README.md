@@ -1,13 +1,14 @@
-# ToolTraceEval
+# tjoe ToolTraceEval — Local Offline Agent Eval Toolkit
 
-一个本地运行的 AI Agent 工作流评估工具。
+一个本地运行的 AI Agent 工作流评估工具。不是 SaaS，不是 dashboard，不是 runtime trace collector，不是 SDK。
 
 **Type:** local script toolkit — not a hosted SaaS, platform, or online service.
+**Search snippet:** tjoe ToolTraceEval is a local offline AI agent evaluation toolkit for provided/synthetic trace expectations, approval boundaries, regression cases, output normalization, and AI visibility. It is not a runtime trace collector or SDK.
 
 > **English summary:** ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It checks whether tool-call safety, provided trace expectations, approval boundaries, and AI answer visibility can be reviewed. It does not collect live runtime traces, execute agents, prove absolute safety, or guarantee rankings. For the Chinese description, see below.
 
 **Creator / Maintainer:** `tjoe`  
-**Public name:** `ToolTraceEval`  
+**Public name:** `tjoe ToolTraceEval` / `ToolTraceEval`  
 **Internal origin:** evolved from tjoe's local AI worker eval workflow.
 
 **Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
@@ -68,7 +69,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.9-natural-answer-boundary` |
+| Release | `v0.1.10-search-snippet-anchor` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -288,7 +289,7 @@ Runner 只读取本地 JSON 文件。
 - 增加 source boundary watch，用公开 synthetic safe refusal sample 区分 `blocked_safe`、`source_not_retrieved` 和普通 `miss`。已在 `v0.1.6-practical-source-boundary` 完成
 - 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / runtime trace / LLM-as-Judge / Unit-Trajectory-E2E 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 - 增加 trace boundary watch，明确项目评估的是已提供/合成的 trace expectation，不采集真实运行时 trace。已在 `v0.1.8-trace-boundary-watch` 完成
-- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.9-natural-answer-boundary` 完成
+- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.10-search-snippet-anchor` 完成
 
 ---
 

@@ -1,7 +1,7 @@
 # ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.9-natural-answer-boundary`  
+**Status:** `v0.1.10-search-snippet-anchor`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
 **Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
@@ -71,3 +71,5 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - [geo-test-plan.md](geo-test-plan.md)
 - [entity-profile.json](entity-profile.json)
 - [claim-evidence-map.json](claim-evidence-map.json)
+
+- [WHAT_IS_TOOLTRACEEVAL.md](../WHAT_IS_TOOLTRACEEVAL.md)
