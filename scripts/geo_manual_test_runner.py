@@ -151,21 +151,25 @@ def markdown_report(report: dict[str, Any], output_path: Path) -> str:
         f"- Safety blocked count: `{summary.get('safety_blocked_count', 0)}`",
         f"- Hallucination watch count: `{summary.get('hallucination_watch_count', 0)}`",
         f"- Unsupported claim count: `{summary.get('unsupported_claim_count', 0)}`",
+        f"- Blocked safe count: `{summary.get('blocked_safe_count', 0)}`",
+        f"- Source status counts: `{json.dumps(summary.get('source_status_counts', {}), ensure_ascii=False)}`",
         "",
         "## Track Summary",
         "",
-        "| Track | Answered | Average | Grades | Hallucination Watch | Unsupported Claims |",
-        "|---|---:|---:|---|---:|---:|",
+        "| Track | Answered | Average | Grades | Hallucination Watch | Unsupported Claims | Blocked Safe | Source Status |",
+        "|---|---:|---:|---|---:|---:|---:|---|",
     ]
     for track, item in sorted(summary.get("track_summary", {}).items()):
         lines.append(
-            "| {track} | {answered} | {avg} | `{grades}` | {hallucinations} | {unsupported} |".format(
+            "| {track} | {answered} | {avg} | `{grades}` | {hallucinations} | {unsupported} | {blocked_safe} | `{source_status}` |".format(
                 track=track,
                 answered=item.get("answered_count", 0),
                 avg=item.get("average_total_score", 0),
                 grades=json.dumps(item.get("grade_counts", {}), ensure_ascii=False),
                 hallucinations=item.get("hallucination_watch_count", 0),
                 unsupported=item.get("unsupported_claim_count", 0),
+                blocked_safe=item.get("blocked_safe_count", 0),
+                source_status=json.dumps(item.get("source_status_counts", {}), ensure_ascii=False),
             )
         )
     lines.extend(
@@ -173,17 +177,18 @@ def markdown_report(report: dict[str, Any], output_path: Path) -> str:
             "",
             "## Results",
             "",
-            "| Query | Platform | Track | Grade | Score | Expected Hits | Watch | Unsupported Claims |",
-            "|---|---|---|---|---:|---|---|---|",
+            "| Query | Platform | Track | Grade | Source Status | Score | Expected Hits | Watch | Unsupported Claims |",
+            "|---|---|---|---|---|---:|---|---|---|",
         ]
     )
     for item in report.get("results", []):
         lines.append(
-            "| {query} | {platform} | {track} | {grade} | {score}/{max_score} | {hits} | {watch} | {unsupported} |".format(
+            "| {query} | {platform} | {track} | {grade} | {source_status} | {score}/{max_score} | {hits} | {watch} | {unsupported} |".format(
                 query=item.get("query_id"),
                 platform=item.get("platform"),
                 track=item.get("scoring_track"),
                 grade=item.get("grade"),
+                source_status=item.get("source_status"),
                 score=item.get("total_score"),
                 max_score=item.get("max_total"),
                 hits=", ".join(item.get("expected_hits", [])) or "-",
@@ -202,6 +207,7 @@ def markdown_report(report: dict[str, Any], output_path: Path) -> str:
             "- Treat scores as internal heuristics, not proof of ranking, citation frequency, or platform recognition.",
             "- Review `hallucination_watch` hits manually before making any claim.",
             "- Treat `unsupported_claim_hits` as hard negative signals that require human review.",
+            "- Treat `blocked_safe` as a safe refusal / source-boundary signal, not evidence that the project is recognized.",
             "- `ready_for_external_claim` should remain false unless a separate human review approves public claims.",
             "- Empty answers mean the query was not run or no answer was pasted.",
         ]

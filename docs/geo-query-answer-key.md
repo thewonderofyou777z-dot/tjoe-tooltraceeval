@@ -68,4 +68,5 @@ ToolTraceEval is a local offline script toolkit. It does not currently support h
 - Do not make external claims from synthetic samples.
 - Review hallucination-watch hits manually.
 - Treat unsupported capability overclaims as hard negative signals, even when the answer sounds confident or product-ready.
+- Treat `blocked_safe` as safe refusal when sources are missing, not as evidence of entity recognition.
 - Keep `ready_for_external_claim` false unless a separate human review approves a public claim.

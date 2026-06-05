@@ -23,7 +23,8 @@ This rubric defines how to interpret first-round AI visibility answers.
 | Partial | Covers either the general domain or the project entity, but misses some components or source detail. |
 | Fail | Misses both domain concepts and the project entity, or answers with unrelated content. |
 | Overclaim | Asserts explicitly unsupported capabilities, such as hosted SaaS, dashboard, portal, online API, runtime agent execution, live tool calls, or web browsing. |
-| Blocked | Refuses or says it cannot verify. This is not automatically bad; treat it as a boundary signal. |
+| Blocked | Refuses or is blocked because of a safety finding such as sensitive local/private data. |
+| Blocked Safe | Says it cannot verify or cannot retrieve sources while avoiding unsupported claims. This is a safe source-boundary signal, not proof of project recognition. |
 
 ## 3. High-Risk Claims
 
@@ -45,6 +46,7 @@ The first test is useful if it produces:
 - at least one entity-recognition answer per platform
 - no unreviewed high-risk claims
 - no unsupported capability overclaims
+- source-boundary behavior is recorded when a platform cannot verify the repo or lacks sources
 - a saved JSON report
 - a saved Markdown report
 - clear next edits for README, `llms.txt`, or answer card
@@ -59,5 +61,6 @@ Do not conclude:
 - "GEO succeeded permanently."
 - "The model remembered the project."
 - "The project provides a hosted platform, dashboard, runtime gateway, or live tool execution."
+- "`blocked_safe` proves the model recognizes the project."
 
 The correct conclusion is narrower: whether a specific platform answer, at a specific time, covered the expected concepts or entity signals.

@@ -39,7 +39,7 @@ REQUIRED_FILES = [
     "scripts/geo_manual_test_runner.py",
 ]
 REQUIRED_TEXT_MARKERS = {
-    "README.md": ["English summary", "v0.1.5-practical-overclaim-watch"],
+    "README.md": ["English summary", "v0.1.6-practical-source-boundary"],
     "llms.txt": ["ToolTraceEval", "machine-readable navigation aid"],
     "llms-full.txt": ["Canonical One-Sentence Answer", "Unsupported Claim Watch"],
     "docs/canonical-qa.md": ["What is ToolTraceEval?", "shortest accurate description"],

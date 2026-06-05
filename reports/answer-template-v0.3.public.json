@@ -1,7 +1,7 @@
 {
-  "template_id": "ai_answer_sample_template_20260605_022259",
+  "template_id": "ai_answer_sample_template_20260605_155127",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
-  "created_at": "2026-06-05T02:22:59",
+  "created_at": "2026-06-05T15:51:27",
   "data_safety": {
     "contains_secret": false,
     "contains_private_message": false,

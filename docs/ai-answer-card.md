@@ -1,7 +1,7 @@
 # ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.5-practical-overclaim-watch`  
+**Status:** `v0.1.6-practical-source-boundary`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
 **Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
@@ -24,6 +24,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - **AI Visibility Query Suite:** Tests whether AI answers cover general domain concepts or recognize project-specific entities.
 - **Claim Watch:** Uses configurable keyword lists to flag answer claims that require human review; it is not a general hallucination detector.
 - **Unsupported Claim Watch:** Flags answers that assert capabilities ToolTraceEval does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
+- **Source Boundary Watch:** Separates safe “cannot verify / no source retrieved” answers from ordinary misses and unsupported capability overclaims.
 - **Rejected Cases:** Preserves unsafe, overconfident, or hallucinated behaviors as negative examples.
 
 ## What It Is Not
@@ -46,6 +47,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - No tool execution.
 - No external publishing.
 - Human review is still required for real answer samples, real agent traces, and high-risk claims.
+- `blocked_safe` means a model refused to overclaim when sources were missing; it does not mean the model recognized the project.
 
 ## 中文口语版
 

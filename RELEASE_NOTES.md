@@ -1,5 +1,52 @@
 # Release Notes
 
+## v0.1.6-practical-source-boundary
+
+Adds a practical source-boundary layer for no-citation and source-missing AI answer tests.
+
+### Added
+
+- `source_status` in runner results.
+- `blocked_safe` grade for answers that explicitly say they cannot verify or retrieve sources while avoiding unsupported claims.
+- `blocked_safe_count` and `source_status_counts` in report summaries and track summaries.
+- Public-safe synthetic source-boundary sample: `examples/sample-answers.blocked-safe.synthetic.json`.
+- Public-safe URL guard regression sample: `examples/sample-answers.source-url-guard.synthetic.json`.
+
+### Updated
+
+- Runner version updated to `0.2.3`.
+- Manual Markdown reports now show source status counts and blocked-safe counts.
+- Source-boundary behavior is documented as a safe refusal signal, not proof of project recognition.
+- `blocked_safe` now stays false when answer text includes a public `http(s)` URL, matching `source_status=cited_public_source`.
+
+### Validation
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.synthetic.json \
+  --output reports/example-report.synthetic.json \
+  --overwrite --ci-smoke
+
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.overclaim.synthetic.json \
+  --output /tmp/tooltraceeval-overclaim-smoke.json \
+  --overwrite --ci-smoke
+
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.blocked-safe.synthetic.json \
+  --output /tmp/tooltraceeval-blocked-safe-smoke.json \
+  --overwrite --ci-smoke
+
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.source-url-guard.synthetic.json \
+  --output /tmp/tooltraceeval-source-url-guard-smoke.json \
+  --overwrite --ci-smoke
+```
+
 ## v0.1.5-practical-overclaim-watch
 
 Adds a practical unsupported capability watch layer for AI visibility testing.

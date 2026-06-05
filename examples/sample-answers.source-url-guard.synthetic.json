@@ -1,0 +1,15 @@
+{
+  "sample_id": "public_synthetic_source_url_guard_answers",
+  "purpose": "Synthetic public-safe regression sample for URL-based source boundary behavior.",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
+  "answers": [
+    {
+      "query_id": "q_boundary_001",
+      "platform": "synthetic_source_url_guard",
+      "answer": "I cannot verify every safety claim from memory, but the public project page says ToolTraceEval is an evaluation toolkit, not a proof of absolute AI safety. See: https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic URL guard sample. Text contains a public URL, so source_status should be cited_public_source and blocked_safe should be false."
+    }
+  ]
+}

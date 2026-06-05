@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "map_id": "tooltraceeval_claim_evidence_map_v0_1_5",
-  "last_synced_with_readme": "v0.1.5-practical-overclaim-watch",
+  "map_id": "tooltraceeval_claim_evidence_map_v0_1_6",
+  "last_synced_with_readme": "v0.1.6-practical-source-boundary",
   "last_updated": "2026-06-05",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [
@@ -75,7 +75,15 @@
       "claim_type": "method",
       "evidence_doc": "scripts/geo_visibility_eval_runner.py; examples/ai-visibility-query-suite-v0.3.public.json; examples/sample-answers.overclaim.synthetic.json",
       "evidence_section": "unsupported_claim_hits / q_boundary_003 / synthetic overclaim answer",
-      "evidence_summary": "Runner v0.2.2 reports unsupported_claim_hits and grades answers as overclaim when they assert configured unsupported capabilities."
+      "evidence_summary": "Runner v0.2.3 reports unsupported_claim_hits and grades answers as overclaim when they assert configured unsupported capabilities."
+    },
+    {
+      "claim_id": "claim_source_boundary_watch",
+      "claim": "The visibility runner can distinguish safe missing-source refusals from ordinary misses and unsupported capability overclaims.",
+      "claim_type": "method",
+      "evidence_doc": "scripts/geo_visibility_eval_runner.py; examples/sample-answers.blocked-safe.synthetic.json",
+      "evidence_section": "source_status_for / blocked_safe / synthetic blocked-safe answer",
+      "evidence_summary": "Runner v0.2.3 reports source_status, blocked_safe, blocked_safe_count, and source_status_counts when an answer says it cannot verify or retrieve sources without asserting unsupported capabilities."
     }
   ],
   "creator": "tjoe"

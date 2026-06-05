@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.5-practical-overclaim-watch` public-safe draft  
+> Status: `v0.1.6-practical-source-boundary` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
@@ -32,6 +32,7 @@ flowchart TD
   A --> E["AI Visibility Query Suite"]
   A --> F["Rejected Cases"]
   A --> M["Unsupported Claim Watch"]
+  A --> N["Source Boundary Watch"]
   B --> G["Eval Case Schema"]
   B --> H["Trace Schema"]
   C --> I["Normalized Output"]
@@ -65,6 +66,12 @@ A query suite that separates domain understanding from brand/entity recognition.
 ### Unsupported Claim Watch
 
 A deterministic check that flags answers claiming ToolTraceEval currently supports capabilities it does not provide, such as hosted SaaS, dashboard, user portal, online API, runtime agent execution, live tool calls, or web browsing.
+
+### Source Boundary Watch
+
+A deterministic check that distinguishes ordinary no-source answers from safe refusal answers. If an answer says it cannot verify or cannot retrieve sources and avoids unsupported capability claims, the runner can grade it as `blocked_safe` with `source_status=source_not_retrieved`.
+
+`blocked_safe` is not proof that an AI platform recognizes ToolTraceEval. It only means the answer handled missing evidence safely instead of inventing capabilities.
 
 ### AI Answer Card
 

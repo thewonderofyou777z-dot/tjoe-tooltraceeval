@@ -9,6 +9,7 @@ Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no
 is_not_a_platform: true.
 What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser"].
 Unsupported_Claim_Watch: flags answers that claim unsupported capabilities such as hosted SaaS, dashboard, portal, online API, runtime execution, live tool calls, or web browsing.
+Source_Boundary_Watch: distinguishes no-source answers from safe refusals; `blocked_safe` means the answer avoided unsupported claims and said it could not verify or retrieve sources. It does not prove ToolTraceEval is recognized.
 
 This document is a machine-readable navigation aid, not an endorsement. Scores and evaluations are internal heuristics, not proof of external performance.
 
@@ -29,7 +30,9 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - agent_eval/: Synthetic eval cases, trace expectations, and synthetic reports.
 - examples/ai-visibility-query-suite-v0.3.public.json: Public-safe query suite for answer visibility testing.
 - examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
-- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.2 also flags configured unsupported capability overclaims.
+- examples/sample-answers.overclaim.synthetic.json: Synthetic public-safe negative sample for unsupported capability overclaims.
+- examples/sample-answers.blocked-safe.synthetic.json: Synthetic public-safe sample for safe refusal and source-boundary behavior.
+- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.3 flags configured unsupported capability overclaims and reports source-boundary signals.
 - scripts/geo_manual_test_runner.py: Offline helper for pasted platform answers and Markdown reports.
 
 ## Purpose

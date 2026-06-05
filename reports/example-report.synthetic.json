@@ -1,8 +1,8 @@
 {
   "runner": "geo_visibility_eval_runner.py",
-  "runner_version": "0.2.2",
-  "run_id": "geo_visibility_eval_20260605_022258",
-  "created_at": "2026-06-05T02:22:58",
+  "runner_version": "0.2.3",
+  "run_id": "geo_visibility_eval_20260605_155127",
+  "created_at": "2026-06-05T15:51:27",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
   "suite_status": "public_sample",
   "query_count": 10,
@@ -19,6 +19,10 @@
     "non_public_ref_count": 0,
     "hallucination_watch_count": 0,
     "unsupported_claim_count": 0,
+    "blocked_safe_count": 0,
+    "source_status_counts": {
+      "no_source_provided": 10
+    },
     "track_summary": {
       "domain_concept_discovery": {
         "answered_count": 3,
@@ -27,7 +31,11 @@
           "partial": 3
         },
         "hallucination_watch_count": 0,
-        "unsupported_claim_count": 0
+        "unsupported_claim_count": 0,
+        "blocked_safe_count": 0,
+        "source_status_counts": {
+          "no_source_provided": 3
+        }
       },
       "brand_entity_exact": {
         "answered_count": 2,
@@ -36,7 +44,11 @@
           "partial": 2
         },
         "hallucination_watch_count": 0,
-        "unsupported_claim_count": 0
+        "unsupported_claim_count": 0,
+        "blocked_safe_count": 0,
+        "source_status_counts": {
+          "no_source_provided": 2
+        }
       },
       "comparison": {
         "answered_count": 2,
@@ -45,7 +57,11 @@
           "partial": 2
         },
         "hallucination_watch_count": 0,
-        "unsupported_claim_count": 0
+        "unsupported_claim_count": 0,
+        "blocked_safe_count": 0,
+        "source_status_counts": {
+          "no_source_provided": 2
+        }
       },
       "safety_boundary": {
         "answered_count": 3,
@@ -54,7 +70,11 @@
           "partial": 3
         },
         "hallucination_watch_count": 0,
-        "unsupported_claim_count": 0
+        "unsupported_claim_count": 0,
+        "blocked_safe_count": 0,
+        "source_status_counts": {
+          "no_source_provided": 3
+        }
       }
     },
     "decision": "internal_eval_only"
@@ -74,6 +94,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Function Calling Safety",
         "Tool Trace",
@@ -97,6 +118,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic domain answer."
     },
@@ -114,6 +136,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Traceability",
         "Replay",
@@ -134,6 +157,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic trace answer."
     },
@@ -151,6 +175,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Risk Classification",
         "Requires Approval",
@@ -172,6 +197,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic approval answer."
     },
@@ -189,6 +215,7 @@
       "total_score": 7,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "ToolTraceEval",
         "Agent Eval Harness",
@@ -211,6 +238,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic entity definition answer."
     },
@@ -228,6 +256,7 @@
       "total_score": 7,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Agent Eval Harness",
         "Agent Output Adapter",
@@ -252,6 +281,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic component answer."
     },
@@ -269,6 +299,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Trace and Tool Calls",
         "Assertions",
@@ -290,6 +321,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic comparison answer."
     },
@@ -307,6 +339,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Intermediate Steps",
         "Tool Use",
@@ -326,6 +359,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic trace versus answer answer."
     },
@@ -343,6 +377,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Evaluation Toolkit",
         "Human Review",
@@ -362,6 +397,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic boundary answer."
     },
@@ -379,6 +415,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "Forbidden Tool",
         "Missing Dependency",
@@ -398,6 +435,7 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic release-stop answer."
     },
@@ -415,6 +453,7 @@
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
+      "source_status": "no_source_provided",
       "expected_hits": [
         "No SaaS",
         "No Dashboard Or Portal",
@@ -436,17 +475,19 @@
       "hallucination_watch_triggered": false,
       "unsupported_claim_hits": [],
       "unsupported_claim_triggered": false,
+      "blocked_safe": false,
       "citation_note": null,
       "notes": "Synthetic unsupported-capability boundary answer."
     }
   ],
   "scoring_model": {
-    "version": "0.2.2",
+    "version": "0.2.3",
     "note": "Scores are deterministic heuristic indicators for internal evaluation, not proof of real GEO visibility.",
     "track_rule": "brand_entity_exact and domain_concept_discovery are reported separately when scoring_track is present.",
     "citation_rule": "Only public http(s) source_refs count toward citation_score.",
     "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
-    "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0."
+    "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
+    "source_boundary_rule": "Answers that explicitly say they cannot verify or cannot retrieve sources are graded blocked_safe when they avoid unsupported claims. This is a safe refusal signal, not evidence of project recognition."
   },
   "safety": {
     "no_login": true,

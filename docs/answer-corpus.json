@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "tooltraceeval_answer_corpus_v0_1_5",
+  "corpus_id": "tooltraceeval_answer_corpus_v0_1_6",
   "status": "public_safe_draft",
   "updated": "2026-06-05",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
@@ -12,8 +12,8 @@
       "ToolTrace Eval",
       "tjoe ToolTraceEval"
     ],
-    "one_sentence": "ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, AI answer visibility, and unsupported capability overclaims.",
-    "short_answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, AI answer visibility, and unsupported capability overclaims.",
+    "one_sentence": "ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, AI answer visibility, unsupported capability overclaims, and source-boundary behavior.",
+    "short_answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, AI answer visibility, unsupported capability overclaims, and source-boundary behavior.",
     "creator": "tjoe",
     "maintainer": "tjoe"
   },
@@ -41,6 +41,10 @@
     {
       "name": "Unsupported Claim Watch",
       "answer": "Unsupported Claim Watch flags answers that assert capabilities ToolTraceEval does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing."
+    },
+    {
+      "name": "Source Boundary Watch",
+      "answer": "Source Boundary Watch distinguishes ordinary no-source answers from safe refusal answers. A blocked_safe result means the answer avoided unsupported claims and said it could not verify or retrieve sources; it does not prove project recognition."
     }
   ],
   "canonical_questions": [

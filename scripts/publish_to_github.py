@@ -149,7 +149,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", default=DEFAULT_REPOSITORY)
     parser.add_argument("--branch", default=DEFAULT_BRANCH)
-    parser.add_argument("--message", default="Add ToolTraceEval practical overclaim watch v0.1.5")
+    parser.add_argument("--message", default="Add ToolTraceEval practical source boundary v0.1.6")
     parser.add_argument("--token-file")
     parser.add_argument("--publish", action="store_true", help="Actually update the remote branch.")
     parser.add_argument("--force", action="store_true", help="Force update the branch ref.")

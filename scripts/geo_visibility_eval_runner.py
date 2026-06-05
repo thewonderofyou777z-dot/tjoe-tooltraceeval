@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.2
+Version: 0.2.3
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.2"
+VERSION = "0.2.3"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -82,6 +82,21 @@ SENSITIVE_PATTERN = re.compile(
     r"private[_-]?key|\\.pem|localhost:\\d+|127\\.0\\.0\\.1:\\d+)",
     re.IGNORECASE,
 )
+SAFE_BLOCK_PATTERNS = [
+    "cannot verify",
+    "can't verify",
+    "cannot confirm",
+    "can't confirm",
+    "unable to verify",
+    "无法核验",
+    "无法确认",
+    "不能确认",
+    "无法直接核验",
+    "没有可核验",
+    "缺少来源",
+    "没有来源",
+    "不能只依据",
+]
 
 
 def load_json(path: Path) -> Any:
@@ -296,6 +311,35 @@ def safety_findings(answer: dict[str, Any]) -> list[str]:
     return findings
 
 
+def source_status_for(answer: dict[str, Any]) -> str:
+    text = str(answer.get("answer", ""))
+    refs = answer.get("source_refs", [])
+    has_public_refs = bool(public_source_refs(refs))
+    has_any_refs = isinstance(refs, list) and bool(refs)
+    mentions_url = bool(URL_PATTERN.search(text))
+    lower_text = text.lower()
+
+    if has_public_refs or mentions_url:
+        return "cited_public_source"
+    if has_any_refs:
+        return "non_public_source_ignored"
+    if any(pattern in lower_text for pattern in SAFE_BLOCK_PATTERNS):
+        return "source_not_retrieved"
+    return "no_source_provided"
+
+
+def is_blocked_safe_answer(answer: dict[str, Any], unsupported_claims: list[dict[str, str]]) -> bool:
+    text = str(answer.get("answer", "")).strip()
+    if not text or unsupported_claims:
+        return False
+    if public_source_refs(answer.get("source_refs", [])):
+        return False
+    if URL_PATTERN.search(text):
+        return False
+    lower_text = text.lower()
+    return any(pattern in lower_text for pattern in SAFE_BLOCK_PATTERNS)
+
+
 def heuristic_scores(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, int]:
     text = str(answer.get("answer", ""))
     refs = answer.get("source_refs", [])
@@ -364,6 +408,8 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
     answer_text = str(answer.get("answer", ""))
     hallucinations = hallucination_hits(answer_text, query)
     unsupported_claims = unsupported_claim_hits(answer_text, query)
+    source_status = source_status_for(answer)
+    blocked_safe = is_blocked_safe_answer(answer, unsupported_claims)
     if any(finding.startswith("sensitive_pattern") for finding in findings):
         return {
             "query_id": query.get("query_id"),
@@ -374,6 +420,7 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
             "total_score": 0,
             "max_total": 12,
             "grade": "blocked",
+            "source_status": source_status,
             "expected_hits": [],
             "entity_hits": [],
             "manual_override_fields": [],
@@ -384,6 +431,7 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
             "hallucination_watch_triggered": bool(hallucinations),
             "unsupported_claim_hits": unsupported_claims,
             "unsupported_claim_triggered": bool(unsupported_claims),
+            "blocked_safe": False,
             "citation_note": citation_note_for(answer),
             "notes": answer.get("notes", ""),
         }
@@ -403,6 +451,9 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
     if unsupported_claims:
         total = 0
         grade = "overclaim"
+    elif blocked_safe:
+        total = 0
+        grade = "blocked_safe"
     elif total >= 9:
         grade = "strong"
     elif total >= 6:
@@ -421,6 +472,7 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
         "total_score": total,
         "max_total": max_total,
         "grade": grade,
+        "source_status": source_status,
         "expected_hits": expected_hits(str(answer.get("answer", "")), query),
         "entity_hits": keyword_hits(str(answer.get("answer", "")), query_terms(query)),
         "manual_override_fields": manual_override_fields,
@@ -431,6 +483,7 @@ def score_answer(answer: dict[str, Any], query: dict[str, Any]) -> dict[str, Any
         "hallucination_watch_triggered": bool(hallucinations),
         "unsupported_claim_hits": unsupported_claims,
         "unsupported_claim_triggered": bool(unsupported_claims),
+        "blocked_safe": blocked_safe,
         "citation_note": citation_note_for(answer),
         "notes": answer.get("notes", ""),
     }
@@ -459,6 +512,11 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
     )
     hallucination_watch_count = sum(1 for item in answered if item.get("hallucination_watch_triggered"))
     unsupported_claim_count = sum(1 for item in answered if item.get("unsupported_claim_triggered"))
+    blocked_safe_count = sum(1 for item in answered if item.get("blocked_safe"))
+    source_status_counts: dict[str, int] = {}
+    for item in answered:
+        status = str(item.get("source_status") or "unknown")
+        source_status_counts[status] = source_status_counts.get(status, 0) + 1
     track_summary: dict[str, dict[str, Any]] = {}
     for item in answered:
         track = str(item.get("scoring_track") or DEFAULT_SCORING_TRACK)
@@ -470,6 +528,8 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
                 "grade_counts": {},
                 "hallucination_watch_count": 0,
                 "unsupported_claim_count": 0,
+                "blocked_safe_count": 0,
+                "source_status_counts": {},
             },
         )
         bucket["answered_count"] += 1
@@ -479,6 +539,10 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
             bucket["hallucination_watch_count"] += 1
         if item.get("unsupported_claim_triggered"):
             bucket["unsupported_claim_count"] += 1
+        if item.get("blocked_safe"):
+            bucket["blocked_safe_count"] += 1
+        status = str(item.get("source_status") or "unknown")
+        bucket["source_status_counts"][status] = bucket["source_status_counts"].get(status, 0) + 1
     for bucket in track_summary.values():
         if bucket["answered_count"]:
             bucket["average_total_score"] = round(
@@ -494,6 +558,8 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
         "non_public_ref_count": non_public_ref_count,
         "hallucination_watch_count": hallucination_watch_count,
         "unsupported_claim_count": unsupported_claim_count,
+        "blocked_safe_count": blocked_safe_count,
+        "source_status_counts": source_status_counts,
         "track_summary": track_summary,
         "decision": "internal_eval_only",
     }
@@ -529,6 +595,7 @@ def build_report(
             "citation_rule": "Only public http(s) source_refs count toward citation_score.",
             "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
             "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
+            "source_boundary_rule": "Answers that explicitly say they cannot verify or cannot retrieve sources are graded blocked_safe when they avoid unsupported claims. This is a safe refusal signal, not evidence of project recognition.",
         },
         "safety": {
             "no_login": True,

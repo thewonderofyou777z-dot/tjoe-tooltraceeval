@@ -1,0 +1,23 @@
+{
+  "sample_id": "public_synthetic_blocked_safe_answers",
+  "purpose": "Synthetic public-safe sample for source-boundary and blocked_safe behavior.",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
+  "answers": [
+    {
+      "query_id": "q_boundary_003",
+      "platform": "synthetic_blocked_safe",
+      "answer": "I cannot verify whether ToolTraceEval currently supports SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing because no public source was provided in this sample.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic safe refusal. This should be graded blocked_safe with source_status=source_not_retrieved."
+    },
+    {
+      "query_id": "q_entity_001",
+      "platform": "synthetic_no_source",
+      "answer": "ToolTraceEval appears to be a local offline evaluation toolkit for AI agent workflows. Its components include Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic no-source answer. This should keep a normal grade but source_status=no_source_provided."
+    }
+  ]
+}

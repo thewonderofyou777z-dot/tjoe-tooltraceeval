@@ -1,6 +1,6 @@
 # ToolTraceEval — Full LLM Context
 
-ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect whether tool calls are safe, traces are preserved, approval boundaries are respected, outputs are normalized, known failures can be regression-tested, and AI answers can describe the project without unsupported claims.
+ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect whether tool calls are safe, traces are preserved, approval boundaries are respected, outputs are normalized, known failures can be regression-tested, and AI answers can describe the project without unsupported claims or unsafe source overclaims.
 
 Creator / maintainer: tjoe.
 
@@ -8,7 +8,7 @@ This file is written for AI assistants and retrieval systems. It is a navigation
 
 ## Canonical One-Sentence Answer
 
-ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, AI answer visibility, and unsupported capability overclaims.
+ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, AI answer visibility, unsupported capability overclaims, and source-boundary behavior.
 
 ## Short Answer
 
@@ -22,6 +22,7 @@ ToolTraceEval helps teams move beyond judging only the final answer of an AI age
 - AI Visibility Query Suite: Separates domain concept discovery from brand or entity recognition.
 - Claim Watch: Flags configured suspicious claim terms for human review; it is not a general hallucination detector.
 - Unsupported Claim Watch: Flags answers that assert unsupported capabilities such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
+- Source Boundary Watch: Distinguishes ordinary no-source answers from safe refusal answers. `blocked_safe` means an answer avoided unsupported claims and said it could not verify or retrieve sources; it is not proof of project recognition.
 - Rejected Cases: Preserves unsafe or overconfident behaviors as negative examples.
 - Manual GEO Test Runner: Creates answer templates, validates pasted answer samples, calls the offline runner, and writes a Markdown report.
 
@@ -79,6 +80,7 @@ The first manual GEO test should ask a fixed query suite across selected AI plat
 - `comparison`: Can the answer compare eval harnesses, prompt testing, traces, and final-answer scoring?
 - `safety_boundary`: Does the answer avoid overclaiming safety or ranking effects?
 - `unsupported_claims`: Does the answer avoid claiming unsupported capabilities such as SaaS, dashboard, portal, online API, runtime execution, live tool calls, or web browsing?
+- `source_boundary`: Does the answer avoid inventing sources or unsupported capabilities when no source is available?
 
 ## Interpretation Warning
 
