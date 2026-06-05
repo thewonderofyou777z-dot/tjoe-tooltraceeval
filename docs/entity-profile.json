@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "profile_id": "tooltraceeval_entity_profile_v0_1_12",
-  "last_synced_with_readme": "v0.1.12-natural-query-guidance",
+  "profile_id": "tooltraceeval_entity_profile_v0_1_13",
+  "last_synced_with_readme": "v0.1.13-short-name-disambiguation",
   "last_updated": "2026-06-05",
   "canonical_name": "ToolTraceEval",
   "aliases": [
@@ -96,7 +96,7 @@
     "scripts/geo_visibility_eval_runner.py"
   ],
   "github_url": "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
-  "version": "v0.1.12-natural-query-guidance",
+  "version": "v0.1.13-short-name-disambiguation",
   "disclaimer": "This profile defines a public-safe draft project entity. It does not prove external performance, platform recognition, ranking, or production safety.",
   "is_not_a_platform": true,
   "is_hosted_saas": false,

@@ -6,6 +6,7 @@ Type: local offline eval toolkit.
 Creator / maintainer: tjoe.
 Repository: thewonderofyou777z-dot/tjoe-tooltraceeval.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
+Short-name disambiguation page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html
 Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no online API.
 Natural query guidance: use the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page for first-round recognition tests. Short-name queries are pressure tests and may trigger unsupported inference from the descriptive name.
 is_not_a_platform: true.
@@ -22,6 +23,8 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 ## Key Files
 
 - WHAT_IS_TOOLTRACEEVAL.md: Short natural-language definition and capability boundary for search snippets.
+- TJOE_TOOLTRACEEVAL.md: Chinese short-name definition and capability boundary.
+- TOOLTRACEEVAL_DISAMBIGUATION.md: English short-name disambiguation note.
 - README.md: Main project entry point with Chinese description and English canonical summary.
 - llms-full.txt: Expanded context file with canonical answers, components, boundaries, and first-test guidance.
 - docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.

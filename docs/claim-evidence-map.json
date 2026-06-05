@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "map_id": "tooltraceeval_claim_evidence_map_v0_1_12",
-  "last_synced_with_readme": "v0.1.12-natural-query-guidance",
+  "map_id": "tooltraceeval_claim_evidence_map_v0_1_13",
+  "last_synced_with_readme": "v0.1.13-short-name-disambiguation",
   "last_updated": "2026-06-05",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [

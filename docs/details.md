@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.12-natural-query-guidance` public-safe draft  
+> Status: `v0.1.13-short-name-disambiguation` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 

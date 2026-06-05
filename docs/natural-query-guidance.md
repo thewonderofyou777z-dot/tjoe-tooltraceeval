@@ -20,7 +20,7 @@ thewonderofyou777z-dot/tjoe-tooltraceeval 这个 GitHub 项目是什么？
 请根据 https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/ 介绍 tjoe ToolTraceEval。
 ```
 
-These forms give the AI system a concrete repository or canonical page anchor.
+These forms give the AI system a concrete repository or canonical page anchor. For short-name disambiguation, use https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html .
 
 ## Short-Name Query Risk
 
