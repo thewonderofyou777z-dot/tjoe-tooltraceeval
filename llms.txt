@@ -7,6 +7,7 @@ Creator / maintainer: tjoe.
 Repository: thewonderofyou777z-dot/tjoe-tooltraceeval.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
 Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no online API.
+Natural query guidance: use the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page for first-round recognition tests. Short-name queries are pressure tests and may trigger unsupported inference from the descriptive name.
 is_not_a_platform: true.
 What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser"].
 Unsupported_Claim_Watch: flags answers that claim unsupported capabilities such as hosted SaaS, dashboard, portal, online API, runtime execution, live tool calls, or web browsing.
@@ -26,6 +27,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.
 - docs/ai-answer-card.md: Short answer card for AI systems and human reviewers.
 - docs/canonical-qa.md: Stable Q&A for AI assistants and manual reviewers.
+- docs/natural-query-guidance.md: Recommended first-round query anchors and short-name pressure test interpretation.
 - docs/answer-corpus.json: Machine-readable canonical answer corpus.
 - docs/geo-query-answer-key.md: Query-level expected answer elements for v0.3 visibility tests.
 - docs/geo-evaluation-rubric.md: Human review rubric for interpreting first-round answers.

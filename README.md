@@ -14,6 +14,8 @@
 
 **Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
 
+**Natural query guidance:** first-round recognition tests should use the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page. Short-name prompts such as `tjoe ToolTraceEval 是什么？` are useful pressure tests, but current AI systems may infer unsupported capabilities from the descriptive name. See [`docs/natural-query-guidance.md`](docs/natural-query-guidance.md).
+
 **中文一句话：** ToolTraceEval 是 tjoe 做的本地离线 Agent 评估工具，用来检查“已提供/合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性”是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
 
 **Natural answer rule:** Do not infer capabilities from the name “ToolTraceEval”. The name contains “Tool” and “Trace”, but the public project currently evaluates provided/synthetic trace expectations only. It does not collect live runtime traces, instrument SDKs, call live tools, browse the web, replay traces, or provide Unit/Trajectory/E2E / LLM-as-Judge engines.
@@ -70,7 +72,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.11-canonical-page` |
+| Release | `v0.1.12-natural-query-guidance` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -290,7 +292,8 @@ Runner 只读取本地 JSON 文件。
 - 增加 source boundary watch，用公开 synthetic safe refusal sample 区分 `blocked_safe`、`source_not_retrieved` 和普通 `miss`。已在 `v0.1.6-practical-source-boundary` 完成
 - 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / runtime trace / LLM-as-Judge / Unit-Trajectory-E2E 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 - 增加 trace boundary watch，明确项目评估的是已提供/合成的 trace expectation，不采集真实运行时 trace。已在 `v0.1.8-trace-boundary-watch` 完成
-- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.11-canonical-page` 完成
+- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.12-natural-query-guidance` 完成
+- 增加 natural query guidance，明确 `owner/repo` 和 canonical page URL 是首轮实体锚点，短名问法是 overclaim 压力测试。
 
 ---
 

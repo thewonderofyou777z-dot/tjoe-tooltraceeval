@@ -149,7 +149,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", default=DEFAULT_REPOSITORY)
     parser.add_argument("--branch", default=DEFAULT_BRANCH)
-    parser.add_argument("--message", default="Add ToolTraceEval canonical answer page v0.1.11")
+    parser.add_argument("--message", default="Add ToolTraceEval natural query guidance v0.1.12")
     parser.add_argument("--token-file")
     parser.add_argument("--publish", action="store_true", help="Actually update the remote branch.")
     parser.add_argument("--force", action="store_true", help="Force update the branch ref.")

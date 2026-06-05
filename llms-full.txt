@@ -103,3 +103,5 @@ Scores are internal heuristics. A good score does not prove ranking, citation fr
 https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
 
 Last updated: 2026-06-05
+
+Natural query guidance: use `thewonderofyou777z-dot/tjoe-tooltraceeval` or https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/ as the first-round entity anchor. Short-name prompts such as `tjoe ToolTraceEval 是什么？` are pressure tests and may trigger unsupported inference from the descriptive name.
