@@ -1,26 +1,27 @@
 # tjoe ToolTraceEval 是什么？
 
-**tjoe ToolTraceEval** 是 tjoe 做的本地离线 AI Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘。
+`tjoe ToolTraceEval` 是 **TjoeReviewKit** 的历史名称。
 
-它当前不是：
+当前推荐名称：**TjoeReviewKit**。
 
-- runtime trace collector
-- SDK instrumentation layer
-- live tool caller
-- runtime gateway
-- web browser
+一句话准确介绍：
+
+> TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
+
+不要根据旧名称里的 `Tool`、`Trace`、`Eval` 推断它已经实现运行时能力。
+
+当前项目不是：
+
 - SaaS
 - dashboard
-- portal
+- 企业 portal
 - online API
-- safety certification system
+- 运行时网关
+- 真实工具调用系统
+- 网页浏览器
+- 生产日志采集器
+- SDK 埋点层
+- Agent 执行器
+- 自动裁判引擎
 
-## Correct Natural Chinese Answer
-
-ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
-
-## Canonical Links
-
-- GitHub: https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
-- Details: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
-- Short-name page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html
+权威页面：https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html

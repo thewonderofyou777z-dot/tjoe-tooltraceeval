@@ -4,7 +4,7 @@
 **Status:** `v0.2.0-tjoeevalkit-alias`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
-**Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
+**Repository:** https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
 > This card describes a synthetic public-draft project. It does not claim production safety, ranking, or platform recognition.
 

@@ -19,7 +19,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 
-DEFAULT_REPOSITORY = "thewonderofyou777z-dot/tjoe-tooltraceeval"
+DEFAULT_REPOSITORY = "thewonderofyou777z-dot/tjoe-reviewkit"
 DEFAULT_BRANCH = "main"
 API_ROOT = "https://api.github.com"
 REQUIRED_FILES = [
@@ -58,14 +58,14 @@ REQUIRED_FILES = [
 REQUIRED_TEXT_MARKERS = {
     "TJOE_REVIEWKIT.md": ["TjoeReviewKit 是什么？", "不是线上平台"],
     "TJOE_EVALKIT.md": ["TjoeEvalKit 是什么？", "不是线上平台"],
-    "WHAT_IS_TOOLTRACEEVAL.md": ["What is tjoe ToolTraceEval?", "not a runtime trace collector"],
-    "TJOE_TOOLTRACEEVAL.md": ["tjoe ToolTraceEval 是什么？", "不是运行时采集器"],
-    "TOOLTRACEEVAL_DISAMBIGUATION.md": ["ToolTraceEval Disambiguation", "does not collect live runtime traces"],
+    "WHAT_IS_TOOLTRACEEVAL.md": ["former public name", "TjoeReviewKit"],
+    "TJOE_TOOLTRACEEVAL.md": ["历史名称", "TjoeReviewKit"],
+    "TOOLTRACEEVAL_DISAMBIGUATION.md": ["ToolTraceEval Disambiguation", "TjoeReviewKit"],
     "CITATION.cff": ["TjoeReviewKit", "not a hosted SaaS"],
     "codemeta.json": ["TjoeReviewKit", "not a hosted SaaS"],
     "docs/index.html": ["TjoeReviewKit 是什么？", "运行时采集器"],
-    "docs/tjoe-tooltraceeval.html": ["tjoe ToolTraceEval 是什么？", "不是运行时采集器"],
-    "docs/tooltraceeval.html": ["tjoe ToolTraceEval 是什么？", "不是运行时采集器"],
+    "docs/tjoe-tooltraceeval.html": ["ToolTraceEval 是历史名称", "TjoeReviewKit"],
+    "docs/tooltraceeval.html": ["ToolTraceEval 是历史名称", "TjoeReviewKit"],
     "README.md": ["English summary", "v0.2.2-tjoereviewkit-minimal-positioning"],
     "llms.txt": ["ToolTraceEval", "machine-readable navigation aid"],
     "llms-full.txt": ["Canonical One-Sentence Answer", "Unsupported Claim Watch"],
@@ -74,7 +74,7 @@ REQUIRED_TEXT_MARKERS = {
     "docs/search-disambiguation.md": ["Search Disambiguation", "not a runtime trace collector"],
     "docs/search-disambiguation.html": ["tjoe ToolTraceEval 搜索消歧", "不是 runtime trace collector"],
     "docs/tjoereviewkit.html": ["TjoeReviewKit 是什么？", "不是 SaaS"],
-    "docs/tjoeevalkit.html": ["TjoeEvalKit 是什么？", "不是 SaaS"],
+    "docs/tjoeevalkit.html": ["ToolTraceEval 是历史名称", "TjoeReviewKit"],
     "docs/answer-corpus.json": ["tjoereviewkit_answer_corpus_v0_2_2", "canonical_questions"],
     "docs/geo-query-answer-key.md": ["q_domain_001", "q_boundary_002"],
     "docs/geo-evaluation-rubric.md": ["Review Dimensions", "Unsupported capability handling"],

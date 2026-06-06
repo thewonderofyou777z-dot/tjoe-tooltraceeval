@@ -7,7 +7,7 @@ Package: `tooltraceeval`
 Release target: `v0.1.5-practical-overclaim-watch`
 
 Published commit: see current `main` after publishing  
-Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval`
+Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-reviewkit`
 
 ## Scope
 

@@ -11,9 +11,9 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 **Primary public name:** `TjoeReviewKit`  
 **Former names:** kept only as repository history  
 **Internal origin:** evolved from tjoe's local AI worker review workflow.
-**Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
-**TjoeReviewKit page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html
-**Search disambiguation page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html
+**Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
+**TjoeReviewKit page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
+**Search disambiguation page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/search-disambiguation.html
 
 **Deployment boundary:** TjoeReviewKit is a local script review toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, runtime gateway, runtime agent execution service, runtime trace collector, SDK instrumentation layer, live tool caller, or web browser.
 

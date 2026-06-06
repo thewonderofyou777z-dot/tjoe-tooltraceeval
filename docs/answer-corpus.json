@@ -11,7 +11,7 @@
       "TjoeEvalKit",
       "ToolTraceEval",
       "tjoe ToolTraceEval",
-      "tjoe-tooltraceeval"
+      "tjoe-reviewkit"
     ],
     "one_sentence": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.",
     "short_answer": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.",

@@ -4,8 +4,8 @@ message: "If you use or reference this software, cite it as TjoeReviewKit, tjoe'
 type: software
 authors:
   - name: tjoe
-repository-code: "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval"
-url: "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html"
+repository-code: "https://github.com/thewonderofyou777z-dot/tjoe-reviewkit"
+url: "https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html"
 abstract: "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, Agent runtime, live tool caller, web browser, or safety certification system."
 keywords:
   - workflow-review

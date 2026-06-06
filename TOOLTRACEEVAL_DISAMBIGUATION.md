@@ -1,13 +1,11 @@
 # ToolTraceEval Disambiguation
 
-`ToolTraceEval` is a descriptive public name for **tjoe ToolTraceEval**, a local offline AI agent evaluation toolkit.
+`ToolTraceEval` is only a former/descriptive name for **TjoeReviewKit** in this repository.
 
-Do not infer current capabilities from the words `Tool`, `Trace`, and `Eval`.
+Use the current name **TjoeReviewKit** when introducing the project.
 
-The current public project evaluates provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility.
+TjoeReviewKit is a local offline workflow review kit. It checks prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.
 
-It does not collect live runtime traces, instrument SDKs, execute tools, browse the web, run a SaaS platform, provide a dashboard, or operate a runtime gateway.
+Do not describe this project as a runtime trace collector, SDK instrumentation layer, Agent execution platform, dashboard, SaaS, portal, online API, or automatic judge engine unless a specific future implementation file says so.
 
-Canonical Chinese answer:
-
-> ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
+Canonical page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html

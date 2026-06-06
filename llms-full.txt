@@ -100,8 +100,8 @@ Scores are internal heuristics. A good score does not prove ranking, citation fr
 
 ## Canonical Repository
 
-https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
+https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
 Last updated: 2026-06-05
 
-Primary name guidance: use `TjoeReviewKit` for natural introduction. Former names `TjoeEvalKit` and `tjoe ToolTraceEval` remain as module/history. Natural query guidance: use `thewonderofyou777z-dot/tjoe-tooltraceeval`, https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/, or https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html as the first-round entity anchor. For entity collision cases, use https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html . Short-name prompts such as `tjoe ToolTraceEval 是什么？` are pressure tests and may trigger unsupported inference from the descriptive name.
+Primary name guidance: use `TjoeReviewKit` for natural introduction. Former names `TjoeEvalKit` and `tjoe ToolTraceEval` remain as module/history. Natural query guidance: use `thewonderofyou777z-dot/tjoe-reviewkit`, https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/, or https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoe-reviewkit.html as the first-round entity anchor. For entity collision cases, use https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/search-disambiguation.html . Short-name prompts such as `tjoe ToolTraceEval 是什么？` are pressure tests and may trigger unsupported inference from the descriptive name.

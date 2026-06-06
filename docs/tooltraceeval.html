@@ -3,68 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>tjoe ToolTraceEval 是什么？准确介绍与能力边界</title>
-  <meta name="description" content="tjoe ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具，用于检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性；不是 runtime trace collector、SDK、SaaS、dashboard 或 live tool caller。">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html">
-  <meta property="og:title" content="tjoe ToolTraceEval 是什么？">
-  <meta property="og:description" content="本地离线 AI Agent 评估工具；不是运行时 trace 采集器、SDK、SaaS 或工具执行器。">
-  <meta property="og:type" content="article">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "tjoe ToolTraceEval 是什么？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "tjoe ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。"
-        }
-      }
-    ]
-  }
-  </script>
-  <style>
-    body{margin:0;background:#f7f4ed;color:#171717;font:18px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}main{max-width:860px;margin:0 auto;padding:48px 20px 72px}.card{background:#fffdf8;border:1px solid #ded7cb;border-radius:22px;padding:30px;margin:18px 0;box-shadow:0 16px 42px rgba(0,0,0,.06)}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 18px}.answer{font-size:1.25rem;border-left:5px solid #1f6feb;padding-left:18px}.no strong{color:#8a4600}.yes strong{color:#116329}a{color:#1f6feb;font-weight:700}code{background:#eee8de;border-radius:6px;padding:1px 6px}li{margin:.35rem 0}
-  </style>
+  <title>ToolTraceEval 历史名称说明 — 请使用 TjoeReviewKit</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html">
+  <meta http-equiv="refresh" content="0; url=https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html">
+  <style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:760px;margin:48px auto;padding:0 24px;line-height:1.7}</style>
 </head>
 <body>
-<main>
-  <section class="card">
-    <h1>tjoe ToolTraceEval 是什么？</h1>
-    <p class="answer"><strong>tjoe ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具</strong>，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。</p>
-    <p>如果你看到 “ToolTraceEval” 这个名字，请不要把它拆成 “Tool + Trace + Eval” 后推断为实时 trace 采集产品。当前公开版本的边界是：<strong>本地、离线、评估已提供/合成证据，不执行真实 Agent。</strong></p>
-  </section>
-  <section class="card yes">
-    <h2>当前支持</h2>
-    <ul>
-      <li><strong>本地离线 runner</strong>：读取本地 JSON 样例并输出评估报告。</li>
-      <li><strong>Agent Eval Harness 示例</strong>：检查审批边界、禁止动作、依赖缺失和回归样例。</li>
-      <li><strong>AI Visibility Query Suite</strong>：检查 AI 回答是否覆盖领域概念、项目实体和 unsupported claim。</li>
-      <li><strong>Claim / Source / Boundary Watch</strong>：标记需要人工复核的过度声明和无来源回答。</li>
-    </ul>
-  </section>
-  <section class="card no">
-    <h2>当前不支持</h2>
-    <ul>
-      <li><strong>不支持 runtime trace collection</strong>：不会采集真实生产运行时 trace。</li>
-      <li><strong>不支持 SDK instrumentation</strong>：不是 SDK 埋点层。</li>
-      <li><strong>不支持 live tool calls</strong>：不会真实调用工具或执行 Agent。</li>
-      <li><strong>不支持 SaaS / dashboard / portal / online API</strong>。</li>
-      <li><strong>不支持 web browsing</strong>：不会浏览网页、登录账号或爬取内容。</li>
-      <li><strong>不提供安全认证或 GEO 排名保证</strong>。</li>
-    </ul>
-  </section>
-  <section class="card">
-    <h2>权威入口</h2>
-    <ul>
-      <li>GitHub: <a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval">thewonderofyou777z-dot/tjoe-tooltraceeval</a></li>
-      <li>Canonical page: <a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/">https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/</a></li>
-      <li>Query guidance: <a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/natural-query-guidance.md">docs/natural-query-guidance.md</a></li>
-    </ul>
-  </section>
-</main>
+  <h1>ToolTraceEval 是历史名称</h1>
+  <p>当前推荐名称是 <strong>TjoeReviewKit</strong>。</p>
+  <p>TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。</p>
+  <p>不要根据旧名称推断运行时采集、SDK、Agent 执行、SaaS、dashboard、portal、online API 或自动裁判引擎。</p>
+  <p><a href="https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html">查看 TjoeReviewKit 权威页面</a></p>
 </body>
 </html>

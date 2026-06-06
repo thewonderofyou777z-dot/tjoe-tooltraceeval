@@ -38,5 +38,5 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 
 ## 链接
 
-- GitHub: https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
-- Page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html
+- GitHub: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
+- Page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html

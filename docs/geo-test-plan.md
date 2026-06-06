@@ -45,7 +45,7 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 When a platform does not provide clear citations or appears to infer from the project name, run a strict source-boundary variant:
 
 ```text
-Please answer using this public GitHub repository as the source: https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
+Please answer using this public GitHub repository as the source: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
 Question: What is tjoe ToolTraceEval? If you cannot directly read the repository README, llms.txt, or docs files, answer only that the repository content cannot be verified and do not infer capabilities from the project name.
 ```

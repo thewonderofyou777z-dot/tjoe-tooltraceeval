@@ -95,7 +95,7 @@
     "examples/ai-visibility-query-suite-v0.3.public.json",
     "scripts/geo_visibility_eval_runner.py"
   ],
-  "github_url": "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
+  "github_url": "https://github.com/thewonderofyou777z-dot/tjoe-reviewkit",
   "version": "v0.2.0-tjoeevalkit-alias",
   "disclaimer": "This profile defines a public-safe draft project entity. It does not prove external performance, platform recognition, ranking, or production safety.",
   "is_not_a_platform": true,

@@ -15,14 +15,14 @@ That inference is wrong for the current public project.
 Use one of these query forms when testing recognition:
 
 ```text
-thewonderofyou777z-dot/tjoe-tooltraceeval 这个 GitHub 项目是什么？
+thewonderofyou777z-dot/tjoe-reviewkit 这个 GitHub 项目是什么？
 ```
 
 ```text
-请根据 https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/ 介绍 tjoe ToolTraceEval。
+请根据 https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/ 介绍 tjoe ToolTraceEval。
 ```
 
-These forms give the AI system a concrete repository or canonical page anchor. For short-name disambiguation, use https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html .
+These forms give the AI system a concrete repository or canonical page anchor. For short-name disambiguation, use https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoe-reviewkit.html .
 
 ## Short-Name Query Risk
 
@@ -33,7 +33,7 @@ tjoe ToolTraceEval 是什么？
 ```
 
 ```text
-tjoe-tooltraceeval 是什么？
+tjoe-reviewkit 是什么？
 ```
 
 If an answer to a short-name query claims current support for runtime trace collection, SDK instrumentation, live tool calls, web browsing, dashboard, SaaS, portal, runtime gateway, or Unit / Trajectory / E2E / LLM-as-Judge engines, treat the answer as an overclaim.

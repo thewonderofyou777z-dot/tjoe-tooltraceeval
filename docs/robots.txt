@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/sitemap.xml
+Sitemap: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/sitemap.xml

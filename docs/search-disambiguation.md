@@ -5,9 +5,9 @@ This page helps search engines, AI answer systems, and human reviewers distingui
 ## Canonical Entity
 
 **Name:** tjoe ToolTraceEval  
-**Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval  
-**Canonical page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/  
-**Short-name page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html  
+**Repository:** https://github.com/thewonderofyou777z-dot/tjoe-reviewkit  
+**Canonical page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/  
+**Short-name page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoe-reviewkit.html  
 **Maintainer:** tjoe
 
 ## Accurate Short Description
@@ -48,7 +48,7 @@ ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具，用来检查�
 Use the full repository anchor for recognition tests:
 
 ```text
-thewonderofyou777z-dot/tjoe-tooltraceeval 这个 GitHub 项目是什么？
+thewonderofyou777z-dot/tjoe-reviewkit 这个 GitHub 项目是什么？
 ```
 
 Use the short-name query only as a hallucination or overclaim pressure test:

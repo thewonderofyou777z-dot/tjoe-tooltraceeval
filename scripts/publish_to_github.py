@@ -27,7 +27,7 @@ from urllib.request import Request, urlopen
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_REPOSITORY = "thewonderofyou777z-dot/tjoe-tooltraceeval"
+DEFAULT_REPOSITORY = "thewonderofyou777z-dot/tjoe-reviewkit"
 DEFAULT_BRANCH = "main"
 API_ROOT = "https://api.github.com"
 EXCLUDE_DIRS = {

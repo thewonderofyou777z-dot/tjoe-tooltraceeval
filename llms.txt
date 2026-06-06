@@ -5,9 +5,9 @@ TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared 
 Primary public name: TjoeReviewKit.
 Type: local offline workflow review kit.
 Creator / maintainer: tjoe.
-Repository: thewonderofyou777z-dot/tjoe-tooltraceeval.
-Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
-TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html
+Repository: thewonderofyou777z-dot/tjoe-reviewkit.
+Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
+TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
 Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no runtime trace collection, no SDK instrumentation, no task execution.
 Natural query guidance: use TjoeReviewKit as the natural name. Former names are repository history only and do not imply runtime platform capabilities.
 is_not_a_platform: true.
@@ -62,6 +62,6 @@ The project separates workflow review from answer review. Review Harness example
 
 ## Public Repository
 
-Canonical public repository: https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
+Canonical public repository: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
 Last updated: 2026-06-05

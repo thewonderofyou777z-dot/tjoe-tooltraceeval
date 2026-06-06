@@ -1,33 +1,27 @@
 # What is tjoe ToolTraceEval?
 
-**tjoe ToolTraceEval** is a local, offline AI agent evaluation toolkit. It helps reviewers check whether provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility can be reviewed and regression-tested.
+`tjoe ToolTraceEval` is a former public name for **TjoeReviewKit**.
 
-## Short Chinese Answer
+Current recommended name: **TjoeReviewKit**.
 
-ToolTraceEval 是 tjoe 做的本地离线 Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘。
+Shortest accurate description:
 
-## What It Is Not
+> TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.
 
-ToolTraceEval is not a runtime trace collector, not an SDK instrumentation layer, and not a live tool execution service.
+Do not infer runtime capabilities from the old words `Tool`, `Trace`, or `Eval`.
 
-ToolTraceEval is not:
+Current project is not:
 
-- a hosted SaaS
-- a dashboard
-- a portal
-- an online API
-- a runtime trace collector
-- a live tool caller
-- a web browser
-- an SDK instrumentation layer
-- a Trace replay system
-- a Unit / Trajectory / E2E platform
-- an LLM-as-Judge engine
+- hosted SaaS
+- dashboard
+- user portal
+- online API
+- runtime gateway
+- live tool caller
+- web browser
+- runtime trace collector
+- SDK instrumentation layer
+- Agent runtime
+- automatic judge engine
 
-## Natural Answer Rule
-
-Do not infer capabilities from the name `ToolTraceEval`. The words `Tool` and `Trace` describe the evaluation theme, not a live runtime instrumentation product.
-
-## Canonical Repository
-
-https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
+Canonical page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
