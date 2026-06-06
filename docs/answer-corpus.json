@@ -1,26 +1,27 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "tjoeevalkit_answer_corpus_v0_2_0",
+  "corpus_id": "tjoereviewkit_answer_corpus_v0_2_1",
   "status": "public_safe_draft",
-  "updated": "2026-06-05",
+  "updated": "2026-06-06",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
   "canonical_entity": {
-    "name": "ToolTraceEval",
+    "name": "TjoeReviewKit",
     "aliases": [
+      "TjoeReviewKit",
+      "TjoeEvalKit",
       "ToolTraceEval",
-      "Tool Trace Eval",
-      "ToolTrace Eval",
-      "tjoe ToolTraceEval"
+      "tjoe ToolTraceEval",
+      "tjoe-tooltraceeval"
     ],
-    "one_sentence": "ToolTraceEval is tjoe's local, offline toolkit for evaluating provided or synthetic AI agent workflow trace expectations, approval boundaries, regression cases, output normalization, AI answer visibility, unsupported capability overclaims, source-boundary behavior, trace-boundary overclaims, and natural-answer over-inference.",
-    "short_answer": "ToolTraceEval is tjoe's local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It does not collect live runtime traces or infer capabilities from its name.",
+    "one_sentence": "TjoeReviewKit is tjoe's local, offline AI workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, unsupported capability overclaims, and AI answer review.",
+    "short_answer": "TjoeReviewKit is tjoe's local, offline AI workflow review kit. It checks prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, and AI answer review. It does not collect live runtime traces, instrument SDKs, execute agents, call tools, or browse the web.",
     "creator": "tjoe",
     "maintainer": "tjoe"
   },
   "components": [
     {
-      "name": "Agent Eval Harness",
-      "answer": "Agent Eval Harness defines process-level eval cases, trace expectations, assertions, risk levels, approval requirements, and release-stop declarations."
+      "name": "Review Harness",
+      "answer": "Review Harness defines public-safe eval cases, assertions, risk levels, approval requirements, prepared expectations, and release-stop declarations."
     },
     {
       "name": "Agent Output Adapter",
@@ -52,7 +53,7 @@
     },
     {
       "name": "Trace Boundary Watch",
-      "answer": "Trace Boundary Watch flags answers that describe provided or synthetic trace expectation evaluation as live runtime trace collection, SDK instrumentation, runtime logging, or trace replay."
+      "answer": "Trace Boundary Watch flags answers that describe prepared expectation review as live runtime trace collection, SDK instrumentation, runtime logging, or trace replay."
     },
     {
       "name": "Natural Answer Boundary",
@@ -61,9 +62,34 @@
   ],
   "canonical_questions": [
     {
+      "question_id": "qa_000",
+      "question": "What is TjoeReviewKit?",
+      "answer": "TjoeReviewKit is tjoe's local, offline AI workflow review kit. It checks prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, source-boundary behavior, unsupported capability overclaims, and AI answer review. It is not a SaaS, dashboard, runtime trace collector, SDK, Agent runtime, live tool caller, or web browser.",
+      "must_include": [
+        "local offline",
+        "workflow review kit",
+        "approval boundaries",
+        "forbidden actions",
+        "answer review"
+      ],
+      "must_not_claim": [
+        "hosted SaaS",
+        "dashboard",
+        "portal",
+        "online API",
+        "runtime agent execution",
+        "live tool calls",
+        "web browsing",
+        "SDK integration",
+        "runtime trace collection",
+        "LLM-as-Judge",
+        "Unit/Trajectory/E2E evaluation"
+      ]
+    },
+    {
       "question_id": "qa_001",
       "question": "What is ToolTraceEval?",
-      "answer": "ToolTraceEval is tjoe's local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It is not a live trace collector, SDK, online platform, or tool execution service.",
+      "answer": "ToolTraceEval is a former name for TjoeReviewKit, tjoe's local offline AI workflow review kit. It helps reviewers inspect prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer review. It is not a live trace collector, SDK, online platform, or tool execution service.",
       "must_include": [
         "local offline evaluation toolkit",
         "AI agent workflows",

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TjoeReviewKit 是什么？tjoe 的本地离线 AI 工作流复盘检查工具</title>
+  <meta name="description" content="TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包，用于检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答是否可审核；不是 SaaS、dashboard、runtime trace collector、SDK 或 Agent 执行器。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html">
+  <meta property="og:title" content="TjoeReviewKit 是什么？">
+  <meta property="og:description" content="TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包；不是 SaaS、dashboard、runtime trace collector、SDK 或 Agent 执行器。">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "TjoeReviewKit",
+    "alternateName": ["TjoeEvalKit", "tjoe ToolTraceEval", "ToolTraceEval"],
+    "description": "TjoeReviewKit is tjoe's local offline AI workflow review kit for prepared eval examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review. It is not a SaaS, dashboard, runtime trace collector, SDK, live tool caller, web browser, Agent runtime, or safety platform.",
+    "codeRepository": "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
+    "url": "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html",
+    "author": {"@type": "Person", "name": "tjoe"},
+    "programmingLanguage": "Python",
+    "applicationCategory": "DeveloperApplication"
+  }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 900px; margin: 48px auto; padding: 0 24px; line-height: 1.72; color: #172033; }
+    h1 { font-size: 2.25rem; margin-bottom: 0.4rem; }
+    h2 { margin-top: 2rem; border-top: 1px solid #e7eaf0; padding-top: 1.2rem; }
+    .answer { font-size: 1.15rem; background: #f5f7fb; border-left: 5px solid #536dfe; padding: 16px 18px; border-radius: 12px; }
+    .warn { background: #fff8e6; border-left: 5px solid #f2a100; padding: 14px 18px; border-radius: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card { border: 1px solid #e7eaf0; border-radius: 16px; padding: 16px; background: #fff; }
+    code { background: #f0f2f6; padding: 2px 5px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>TjoeReviewKit 是什么？</h1>
+    <p class="answer"><strong>TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包</strong>，用于检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构、来源提示和 AI 回答是否可审核。</p>
+
+    <p>它不是运行时系统。它不会启动 Agent，不会接管工具调用，不会采集生产 trace，不会联网，也不会替你发布内容。</p>
+
+    <div class="warn">
+      <strong>命名说明：</strong>这个项目早期叫 <code>tjoe ToolTraceEval</code>，后来也试过 <code>TjoeEvalKit</code>。这些名字容易让无引用模型误以为项目已经实现 runtime trace collector、SDK instrumentation、Agent 执行平台或企业级安全网关。更准确的说法是：它是 <strong>review kit</strong>，不是 runtime kit。
+    </div>
+
+    <h2>当前支持什么？</h2>
+    <div class="grid">
+      <div class="card">读取本地 JSON 样例和本地 answer samples。</div>
+      <div class="card">生成离线评估报告。</div>
+      <div class="card">检查高风险动作是否应该进入人工审批。</div>
+      <div class="card">检查回答是否把不支持能力说成已支持。</div>
+      <div class="card">检查回答是否缺少来源、是否过度推断。</div>
+      <div class="card">保存 synthetic eval cases、rejected cases 和 public-safe reports。</div>
+    </div>
+
+    <h2>当前不支持什么？</h2>
+    <ul>
+      <li>不是 SaaS、dashboard、企业 portal 或 online API。</li>
+      <li>不是 runtime gateway、live tool caller 或 web browser。</li>
+      <li>不是 Agent runtime execution service。</li>
+      <li>不是 runtime trace collector，也不是 SDK instrumentation layer。</li>
+      <li>不提供 LLM-as-Judge、Unit / Trajectory / E2E 自动评测引擎。</li>
+      <li>不证明绝对 AI 安全，也不保证 SEO / GEO 排名。</li>
+    </ul>
+
+    <h2>一句话自然介绍</h2>
+    <p class="answer">TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包，用来检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答是否可审核；它不是线上平台、运行时采集器、SDK、Agent 执行器或工具调用系统。</p>
+
+    <h2>来源入口</h2>
+    <ul>
+      <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval">GitHub repository</a></li>
+      <li><a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/">Canonical details page</a></li>
+      <li><a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoeevalkit.html">Former TjoeEvalKit page</a></li>
+      <li><a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html">Search disambiguation</a></li>
+    </ul>
+  </main>
+</body>
+</html>

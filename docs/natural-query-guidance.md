@@ -1,5 +1,7 @@
 # Natural Query Guidance
 
+Current preferred natural name: `TjoeReviewKit`. It intentionally avoids the stronger runtime priors in `ToolTraceEval` and the broader implementation priors in `TjoeEvalKit`.
+
 This page records the recommended first-round query form for testing whether an AI system can accurately introduce **tjoe ToolTraceEval**.
 
 ## Why This Exists

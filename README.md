@@ -1,39 +1,40 @@
-# TjoeEvalKit — Local Offline AI Agent Eval Toolkit
+# TjoeReviewKit — Local Offline AI Workflow Review Kit
 
-TjoeEvalKit 是 tjoe 的本地离线 AI Agent 评估工具包。原公开名为 tjoe ToolTraceEval；不是 SaaS，不是 dashboard，不是 runtime trace collector，不是 SDK。
+TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包。它原先叫 tjoe ToolTraceEval，后来也试过 TjoeEvalKit；现在改用 ReviewKit，是为了避免无引用模型把它误读成 runtime trace 采集器、SDK 或 Agent 执行平台。
 
-**Type:** local script toolkit — not a hosted SaaS, platform, or online service.
-**Search snippet:** TjoeEvalKit is tjoe's local offline AI agent evaluation toolkit for provided/synthetic eval cases, approval boundaries, regression cases, output normalization, and AI visibility. It is not a runtime trace collector or SDK. Former public name: tjoe ToolTraceEval.
+**Type:** local script review toolkit — not a hosted SaaS, platform, online service, runtime collector, or SDK.  
+**Search snippet:** TjoeReviewKit is tjoe's local offline AI workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review. It is not an Agent runtime, runtime trace collector, SDK, dashboard, portal, online API, live tool caller, or web browser.
 
-> **English summary:** ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It checks whether tool-call safety, provided trace expectations, approval boundaries, and AI answer visibility can be reviewed. It does not collect live runtime traces, execute agents, prove absolute safety, or guarantee rankings. For the Chinese description, see below.
+> **English summary:** TjoeReviewKit is a local, offline workflow review kit. It checks prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, source-boundary behavior, and unsupported capability overclaims. It does not collect live runtime traces, execute agents, call tools, browse the web, prove absolute safety, or guarantee rankings.
 
 **Creator / Maintainer:** `tjoe`  
-**Primary public name:** `TjoeEvalKit`  
-**Former / module name:** `tjoe ToolTraceEval` / `ToolTraceEval`  
+**Primary public name:** `TjoeReviewKit`  
+**Former names:** `TjoeEvalKit` / `tjoe ToolTraceEval` / `ToolTraceEval`  
 **Internal origin:** evolved from tjoe's local AI worker eval workflow.
 **Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
+**TjoeReviewKit page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html
+**TjoeEvalKit page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoeevalkit.html
 **Short-name disambiguation page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html
 **Search disambiguation page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html
-**TjoeEvalKit page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoeevalkit.html
 
-**Deployment boundary:** TjoeEvalKit is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
+**Deployment boundary:** TjoeReviewKit is a local script review toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, runtime gateway, runtime agent execution service, runtime trace collector, SDK instrumentation layer, live tool caller, or web browser.
 
-**Natural query guidance:** first-round recognition tests should use the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page. Short-name prompts such as `tjoe ToolTraceEval 是什么？` are useful pressure tests, but current AI systems may infer unsupported capabilities from the descriptive name. See [`docs/natural-query-guidance.md`](docs/natural-query-guidance.md).
+**Natural query guidance:** first-round recognition tests should use `TjoeReviewKit` plus the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page. Short-name prompts remain useful pressure tests, but current AI systems may infer unsupported capabilities from names containing `Agent`, `Eval`, `Tool`, or `Trace`. See [`docs/natural-query-guidance.md`](docs/natural-query-guidance.md).
 
-**中文一句话：** TjoeEvalKit 是 tjoe 的本地离线 AI Agent 评估工具包，用来检查评估样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答可见性是否可复盘；它不是线上平台、运行时采集器、SDK 或工具执行器。
+**中文一句话：** TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包，用来检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答是否可审核；它不是线上平台、运行时采集器、SDK、Agent 执行器或工具调用系统。
 
-**Natural answer rule:** Do not infer capabilities from the name “ToolTraceEval”. The name contains “Tool” and “Trace”, but the public project currently evaluates provided/synthetic trace expectations only. It does not collect live runtime traces, instrument SDKs, call live tools, browse the web, replay traces, or provide Unit/Trajectory/E2E / LLM-as-Judge engines.
+**Natural answer rule:** Do not infer capabilities from the older names “ToolTraceEval” or “TjoeEvalKit”. The current public project reviews prepared examples and answer samples only. It does not collect live runtime traces, instrument SDKs, call live tools, browse the web, replay traces, or provide Unit/Trajectory/E2E / LLM-as-Judge engines.
 
 它的目标很简单：  
-不是看 AI 最后回答得漂不漂亮，而是检查一个 Agent 工作流的**已提供证据能不能复盘、边界能不能审核、旧问题能不能回归测试**。
+不是看 AI 最后回答得漂不漂亮，也不是接管 Agent 运行过程，而是检查一个工作流的**已提供证据能不能复盘、边界能不能审核、旧问题能不能回归测试**。
 
 这个项目重点关注：
 
-- Agent 有没有调用危险工具
 - 高风险操作有没有要求人工审批
-- 已提供/合成的 trace expectation 是否足够复盘，不代表实时采集 trace
+- 删除、写入、安装、执行命令这类动作有没有被正确阻断
+- 已准备好的样例和规则是否足够复盘
 - 输出结果能不能被结构化检查
-- AI 平台能不能准确理解这个项目，而不是乱编
+- AI 平台能不能准确理解这个项目，而不是乱编成 SaaS、SDK、runtime trace collector 或 Agent 执行器
 
 > 说明：这个项目不承诺绝对 AI 安全，也不保证 SEO / GEO 排名效果，更不能替代法律或合规审核。
 > 它也不是线上平台或 SaaS 服务：没有托管仪表盘、没有用户门户、没有线上 API，也不会执行 Agent。
@@ -58,10 +59,10 @@ TjoeEvalKit 是 tjoe 的本地离线 AI Agent 评估工具包。原公开名为 
 
 | 模块 | 作用 |
 |---|---|
-| Agent Eval Harness | 定义并评估已提供/合成的 trace expectation、审批边界、禁止工具和发布阻断声明 |
-| Agent Output Adapter | 把模型或 Agent 的原始输出整理成稳定结构，方便评估 |
+| Review Harness | 定义并评估已准备好的样例、审批边界、禁止工具和发布阻断声明 |
+| Output Adapter | 把原始回答或样例输出整理成稳定结构，方便检查 |
 | Local Eval Runner | 本地离线跑评估，不联网、不调模型、不执行危险工具 |
-| AI Visibility Query Suite | 测试 AI 回答是否理解领域概念，是否识别项目实体 |
+| AI Visibility Query Suite | 测试 AI 回答是否理解项目边界，是否识别项目实体 |
 | Claim Watch | 用关键词标记需要人工复核的可疑说法，不是通用幻觉检测器 |
 | Unsupported Claim Watch | 抓“当前不支持的能力被说成支持”，例如 SaaS、dashboard、runtime gateway、live tool calls |
 | Source Boundary Watch | 抓“缺少来源时是否安全拒答”，区分 `blocked_safe`、`source_not_retrieved` 和普通低分 |
@@ -76,7 +77,7 @@ TjoeEvalKit 是 tjoe 的本地离线 AI Agent 评估工具包。原公开名为 
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.2.0-tjoeevalkit-alias` |
+| Release | `v0.2.1-tjoereviewkit-alias` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -104,7 +105,7 @@ python3 scripts/geo_visibility_eval_runner.py \
 python3 -m json.tool reports/example-report.synthetic.json
 ```
 
-查看 Agent Eval Harness 示例：
+查看 Review Harness 示例：
 
 ```bash
 python3 -m json.tool agent_eval/agent-eval-cases-v0.1.json
@@ -132,7 +133,7 @@ python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 
 ---
 
-## Agent Eval Harness 示例
+## Review Harness 示例
 
 `v0.1.1-public-draft` 新增了一套公开安全的 Agent Eval Harness 示例。
 
@@ -193,7 +194,7 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 - [`docs/ai-answer-card.md`](docs/ai-answer-card.md)
 - [`docs/geo-test-plan.md`](docs/geo-test-plan.md)
 
-Agent Eval Harness 说明见：
+Review Harness 说明见：
 
 - [`docs/agent-eval-harness-guide.md`](docs/agent-eval-harness-guide.md)
 
@@ -272,7 +273,7 @@ Runner 只读取本地 JSON 文件。
 - AI 安全证明工具
 - 行业权威 benchmark
 
-它更像是一个小型、可复现、可扩展的 AI Agent 工作流评估起点。
+它更像是一个小型、可复现、可扩展的 AI 工作流复盘检查起点。
 
 ---
 
@@ -301,6 +302,7 @@ Runner 只读取本地 JSON 文件。
 - 增加短名消歧页和根目录消歧文件，降低 `tjoe ToolTraceEval` 被拆词误读为 runtime trace / SDK 产品的概率。
 - 增加 search disambiguation、`CITATION.cff` 和 `codemeta.json`，把 tjoe ToolTraceEval 与 Tooltrace / T-Eval / trace-eval 等相似实体区分开。
 - 增加 `TjoeEvalKit` 作为主品牌 alias，降低 `ToolTraceEval` 描述性命名导致的自然问法误读。
+- 增加 `TjoeReviewKit` 作为更低先验的主品牌 alias，把定位从“Agent eval / trace”收窄为“本地离线工作流复盘检查”。
 
 ---
 

@@ -1,14 +1,14 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "name": "ToolTraceEval FAQ",
+  "name": "TjoeReviewKit FAQ",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is ToolTraceEval?",
+      "name": "What is TjoeReviewKit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It checks whether an agent respects tool-call boundaries, approval requirements, execution traces, evidence preservation, and release-stop conditions."
+        "text": "TjoeReviewKit is tjoe's local offline AI workflow review kit. It checks prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, source-boundary behavior, and unsupported capability overclaims."
       }
     },
     {
@@ -24,7 +24,7 @@
       "name": "What does the local runner do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The local runner reads a JSON query suite and answer samples, then produces an offline evaluation report. It does not browse, log in, call models, execute tools, or publish content."
+        "text": "The local runner reads a JSON query suite and answer samples, then produces an offline review report. It does not browse, log in, call models, execute tools, collect runtime traces, or publish content."
       }
     },
     {

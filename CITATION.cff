@@ -1,18 +1,18 @@
 cff-version: 1.2.0
-title: "TjoeEvalKit"
-message: "If you use or reference this software, cite it as TjoeEvalKit, tjoe's local offline AI agent evaluation toolkit. Former public name: tjoe ToolTraceEval."
+title: "TjoeReviewKit"
+message: "If you use or reference this software, cite it as TjoeReviewKit, tjoe's local offline AI workflow review kit. Former names: TjoeEvalKit and tjoe ToolTraceEval."
 type: software
 authors:
   - name: tjoe
 repository-code: "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval"
-url: "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/"
-abstract: "TjoeEvalKit is tjoe's local offline AI agent evaluation toolkit for provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, live tool caller, web browser, or safety certification system."
+url: "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html"
+abstract: "TjoeReviewKit is tjoe's local offline AI workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, Agent runtime, live tool caller, web browser, or safety certification system."
 keywords:
-  - ai-agent-evaluation
-  - llm-eval
+  - workflow-review
+  - ai-boundary-review
   - offline-eval
-  - tooltraceeval
+  - tjoereviewkit
   - tjoe
 license: MIT
-version: "0.2.0-tjoeevalkit-alias"
+version: "0.2.1-tjoereviewkit-alias"
 date-released: "2026-06-06"

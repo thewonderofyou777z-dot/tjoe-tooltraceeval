@@ -1,16 +1,17 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "name": "TjoeEvalKit",
+  "name": "TjoeReviewKit",
   "alternateName": [
+    "TjoeEvalKit",
     "tjoe ToolTraceEval",
     "ToolTraceEval",
     "tjoe-tooltraceeval"
   ],
-  "version": "0.2.0-tjoeevalkit-alias",
-  "description": "TjoeEvalKit is tjoe's local offline AI agent evaluation toolkit for provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, live tool caller, web browser, or safety certification system.",
+  "version": "0.2.1-tjoereviewkit-alias",
+  "description": "TjoeReviewKit is tjoe's local offline AI workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, Agent runtime, live tool caller, web browser, or safety certification system.",
   "codeRepository": "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
-  "url": "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/",
+  "url": "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html",
   "author": [
     {
       "@type": "Person",
@@ -21,10 +22,10 @@
   "runtimePlatform": "Local offline scripts",
   "license": "https://spdx.org/licenses/MIT",
   "keywords": [
-    "ai-agent-evaluation",
-    "llm-eval",
+    "workflow-review",
+    "ai-boundary-review",
     "offline-eval",
-    "tooltraceeval",
+    "tjoereviewkit",
     "tjoe"
   ],
   "softwareRequirements": "Python 3; local JSON files only; no model calls; no network calls required by the runner"
