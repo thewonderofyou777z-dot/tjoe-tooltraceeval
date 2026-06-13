@@ -1,0 +1,62 @@
+# TjoeReviewKit
+
+TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.
+
+Primary public name: TjoeReviewKit.
+Type: local offline workflow review kit.
+Creator / maintainer: tjoe.
+Repository: thewonderofyou777z-dot/tjoe-reviewkit.
+Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
+TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
+Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no production log collection, no SDK integration, no task execution.
+Natural query guidance: use TjoeReviewKit as the natural name. This is the current public name. Do not infer runtime platform capabilities.
+is_not_a_platform: true.
+What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser", "production log collector", "SDK integration layer", "automated scoring engine", "multi-stage engine", "task executor"].
+Canonical_Natural_Answer_ZH: TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
+
+This document is a machine-readable navigation aid, not an endorsement. Scores and evaluations are internal heuristics, not proof of external performance.
+
+## Key Files
+
+- TJOE_REVIEWKIT.md: Primary Chinese definition and capability boundary for TjoeReviewKit.
+- CITATION.cff: Software citation metadata for TjoeReviewKit and former names.
+- codemeta.json: Machine-readable software metadata and capability boundary.
+- README.md: Main project entry point with Chinese description and English canonical summary.
+- llms-full.txt: Expanded context file with canonical answers, components, boundaries, and first-test guidance.
+- docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.
+- docs/ai-answer-card.md: Short answer card for AI systems and human reviewers.
+- docs/canonical-qa.md: Stable Q&A for AI assistants and manual reviewers.
+- docs/natural-query-guidance.md: Recommended first-round query anchors and short-name pressure test interpretation.
+- docs/answer-corpus.json: Machine-readable canonical answer corpus.
+- docs/geo-query-answer-key.md: Query-level expected answer elements for v0.3 visibility tests.
+- docs/geo-evaluation-rubric.md: Human review rubric for interpreting first-round answers.
+- docs/geo-test-plan.md: Manual seven-day GEO / AI visibility test plan with pass, partial, fail, and blocked criteria.
+- docs/entity-profile.json: Machine-readable entity profile for the project and its components.
+- docs/claim-evidence-map.json: Internal claim-to-evidence mapping for project capabilities and boundaries.
+- docs/workflow-review-harness-guide.md: Guide for process-level Review Harness examples.
+- agent_eval/: Synthetic eval cases and synthetic reports.
+- examples/ai-visibility-query-suite-v0.3.public.json: Public-safe query suite for answer visibility testing.
+- examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
+- examples/sample-answers.overclaim.synthetic.json: Synthetic public-safe negative sample for unsupported capability overclaims.
+- examples/sample-answers.blocked-safe.synthetic.json: Synthetic public-safe sample for safe refusal and source-boundary behavior.
+- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.5 flags configured unsupported capability overclaims, suite-level implementation overclaims, and source-boundary signals.
+- scripts/geo_manual_test_runner.py: Offline helper for pasted platform answers and Markdown reports.
+
+## Purpose
+
+The project separates workflow review from answer review. Review Harness examples check whether prepared workflow expectations, approvals, forbidden actions, and release-stop declarations are represented. GEO / AI Visibility Runner checks whether AI answers cover relevant boundary concepts or recognize project-specific entities.
+
+## What It Is Not
+
+- It is not an SEO ranking tool.
+- It is not a GEO ranking guarantee.
+- It is not a legal or compliance certification system.
+- It is not proof that an AI agent is safe.
+- It is not an industry-wide benchmark.
+- It does not run tasks or call external AI platforms.
+
+## Public Repository
+
+Canonical public repository: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
+
+Last updated: 2026-06-05
