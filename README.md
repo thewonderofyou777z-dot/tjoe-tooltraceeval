@@ -120,11 +120,13 @@ python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 | 路径 | 评估什么 |
 |---|---|
 | GEO / AI Visibility Runner | 评估回答结果：概念覆盖、实体识别、引用信号、可疑声明、unsupported capability overclaim、source boundary |
+| No-Index Test Pack | 不主动给链接或页面内容，只问自然问题，测试模型能否自然准确识别，或在没来源时安全拒答 |
 
 简单说：
 
 - Review Harness 看的是 **已提供/合成的过程证据能不能表达风险、审批和复盘要求**
 - GEO Runner 看的是 **AI 回答有没有覆盖该覆盖的概念、有没有准确提到项目、有没有把不支持的能力说成支持、有没有在缺少来源时安全拒答**
+- No-Index Test Pack 看的是 **不喂链接时，AI 是自然准确介绍、诚实说无法确认，还是根据名字乱编能力**
 
 两条路径故意分开。  
 这样可以避免一种情况：AI 最后回答看起来不错，但中间执行过程其实已经越权了。
@@ -162,6 +164,13 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 | 评估轨道 | 测什么 | 不代表什么 |
 |---|---|---|
 | `domain_concept_discovery` | AI 是否理解工具调用、安全审批、回归测试、审计日志等通用概念 | 不代表它认识这个项目 |
+
+No-index / no-supplied-source 测试使用：
+
+- [`examples/no-index-query-suite-v0.1.public.json`](examples/no-index-query-suite-v0.1.public.json)
+- [`docs/no-index-test-runbook.md`](docs/no-index-test-runbook.md)
+
+这组问题不要附 GitHub URL、Pages URL 或页面原文。它的目标不是证明排名，而是记录模型在“没有显式来源”时会不会过度推断。
 
 ---
 
@@ -295,6 +304,7 @@ Runner 只读取本地 JSON 文件。
 - 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / production log / automated scoring / multi-stage 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 - 增加 natural query guidance，明确 `owner/repo` 和 canonical page URL 是首轮实体锚点，短名问法是 overclaim 压力测试。
 - 增加 `TjoeReviewKit` 作为更低先验的主品牌 alias，把定位从旧的强工程暗示收窄为“本地离线工作流复盘检查”。
+- 增加 no-index / no-supplied-source 测试包，用于豆包、通义千问、DeepSeek 等平台的自然问题压力测试。已在 `v0.3.6-no-index-test-pack` 完成
 
 ---
 

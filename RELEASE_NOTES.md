@@ -1,5 +1,27 @@
 # Release Notes
 
+## v0.3.6-no-index-test-pack
+
+Focus: add a repeatable no-index / no-supplied-source test pack for natural AI platform questions.
+
+Changes:
+
+- Added `examples/no-index-query-suite-v0.1.public.json`.
+- Added `docs/no-index-test-runbook.md`.
+- README now distinguishes standard GEO / AI Visibility tests from no-index natural question pressure tests.
+- The no-index test pack treats two outcomes as useful evidence: accurate natural recognition, or safe no-source refusal without unsupported claims.
+
+Validation:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/no-index-query-suite-v0.1.public.json \
+  --write-template /tmp/tjoereviewkit-no-index-template.json \
+  --output /tmp/tjoereviewkit-no-index-template-report.json \
+  --markdown-output /tmp/tjoereviewkit-no-index-template-report.md \
+  --overwrite --ci-smoke
+```
+
 ## v0.3.5-markdown-report-output
 
 Focus: make the core visibility runner produce a human-readable Markdown report directly, so a reviewer can inspect results without a separate conversion script.
