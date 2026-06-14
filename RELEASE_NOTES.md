@@ -1,5 +1,28 @@
 # Release Notes
 
+## v0.3.7-no-index-runner-fixes
+
+Focus: make no-index multi-platform testing work correctly.
+
+Changes:
+
+- Runner version updated to `0.2.8`.
+- The runner now supports multiple answers with the same `query_id`, so 豆包、通义千问、DeepSeek、ChatGPT、Grok can all be scored against one natural question.
+- Sensitive-pattern detection no longer treats the ordinary AI term `Token` as a secret by itself; it now focuses on credential-like terms such as `access_token` and `refresh_token`.
+- The no-index suite now flags review-workbench platform overclaims such as OpenTelemetry, Jira, PDF/JSON, TraceID, visual review, multi-reviewer workflow, and compliance archive claims.
+- The no-index runbook now states that repeated `query_id` values are valid for multi-platform answer samples.
+
+Validation:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/no-index-query-suite-v0.1.public.json \
+  --answers /tmp/tjoereviewkit-no-index-synthetic-answers.json \
+  --output /tmp/tjoereviewkit-no-index-synthetic-report.json \
+  --markdown-output /tmp/tjoereviewkit-no-index-synthetic-report.md \
+  --overwrite --ci-smoke
+```
+
 ## v0.3.6-no-index-test-pack
 
 Focus: add a repeatable no-index / no-supplied-source test pack for natural AI platform questions.

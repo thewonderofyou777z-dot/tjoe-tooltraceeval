@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.6
+Version: 0.2.8
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.6"
+VERSION = "0.2.8"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -78,7 +78,7 @@ CONVERSION_TERMS = [
 ]
 URL_PATTERN = re.compile(r"https?://")
 SENSITIVE_PATTERN = re.compile(
-    r"(password|passwd|api[_-]?key|secret|token|cookie|bearer|sk-[a-zA-Z0-9]|"
+    r"(password|passwd|api[_-]?key|secret|access[_-]?token|refresh[_-]?token|cookie|bearer|sk-[a-zA-Z0-9]|"
     r"private[_-]?key|\\.pem|localhost:\\d+|127\\.0\\.0\\.1:\\d+)",
     re.IGNORECASE,
 )
@@ -578,11 +578,17 @@ def build_report(
     template_path: Path | None,
 ) -> dict[str, Any]:
     queries = flatten_queries(suite)
-    answer_by_id = {answer.get("query_id"): answer for answer in answers or []}
-    results = [
-        score_answer(answer_by_id.get(query["query_id"], {}), query)
-        for query in queries
-    ]
+    query_by_id = {query["query_id"]: query for query in queries}
+    if answers:
+        results = []
+        for answer in answers:
+            query_id = answer.get("query_id")
+            query = query_by_id.get(query_id)
+            if query is None:
+                raise ValueError(f"Answer references unknown query_id: {query_id}")
+            results.append(score_answer(answer, query))
+    else:
+        results = [score_answer({}, query) for query in queries]
     return {
         "runner": "geo_visibility_eval_runner.py",
         "runner_version": VERSION,

@@ -73,6 +73,8 @@ Paste each platform answer into `reports/no-index-answer-template-v0.1.json`.
 
 Keep `source_refs` empty unless the platform itself gives a public `http(s)` source.
 
+The same `query_id` can appear multiple times when different platforms answer the same question. The runner scores each platform answer separately.
+
 ## 5. Run Report
 
 ```bash

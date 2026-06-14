@@ -180,6 +180,26 @@
         "collects full tool-call execution trajectories",
         "captures every tool choice and return payload"
       ]
+    },
+    {
+      "claim_id": "review_workbench_platform_overclaim",
+      "failure_class": "review_workbench_platform_overclaim",
+      "terms": [
+        "OpenTelemetry",
+        "Jira",
+        "PDF/JSON",
+        "TraceID",
+        "可视化评审",
+        "多人协作评审",
+        "评审状态流转",
+        "风险等级（高 / 中 / 低）",
+        "整改闭环",
+        "评审工作台",
+        "合规归档",
+        "自动输出标准化评审报告",
+        "推送缺陷记录",
+        "批量审计"
+      ]
     }
   ],
   "query_groups": [
