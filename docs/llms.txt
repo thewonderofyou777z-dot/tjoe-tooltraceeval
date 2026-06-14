@@ -8,6 +8,7 @@ Creator / maintainer: tjoe.
 Repository: thewonderofyou777z-dot/tjoe-reviewkit.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
 TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
+TjoeReviewKit standard answers page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html
 Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no production log collection, no SDK integration, no task execution.
 Natural query guidance: use TjoeReviewKit as the natural name. This is the current public name. Do not infer runtime platform capabilities.
 is_not_a_platform: true.
@@ -26,6 +27,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.
 - docs/ai-answer-card.md: Short answer card for AI systems and human reviewers.
 - docs/canonical-qa.md: Stable Q&A for AI assistants and manual reviewers.
+- docs/answers.html: Short indexed FAQ-style answer page for AI systems and search crawlers.
 - docs/natural-query-guidance.md: Recommended first-round query anchors and short-name pressure test interpretation.
 - docs/answer-corpus.json: Machine-readable canonical answer corpus.
 - docs/geo-query-answer-key.md: Query-level expected answer elements for v0.3 visibility tests.
@@ -39,7 +41,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
 - examples/sample-answers.overclaim.synthetic.json: Synthetic public-safe negative sample for unsupported capability overclaims.
 - examples/sample-answers.blocked-safe.synthetic.json: Synthetic public-safe sample for safe refusal and source-boundary behavior.
-- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.5 flags configured unsupported capability overclaims, suite-level implementation overclaims, and source-boundary signals.
+- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.8 flags configured unsupported capability overclaims, suite-level implementation overclaims, source-boundary signals, and multi-platform no-index answer samples.
 - scripts/geo_manual_test_runner.py: Offline helper for pasted platform answers and Markdown reports.
 
 ## Purpose
@@ -61,4 +63,4 @@ Terminology note: `public-safe` means safe-to-share synthetic material, not publ
 
 Canonical public repository: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
-Last updated: 2026-06-05
+Last updated: 2026-06-14

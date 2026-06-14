@@ -1,5 +1,22 @@
 # Release Notes
 
+## v0.3.8-index-entrypoint-enhancement
+
+Focus: improve public indexing and AI-readable entry points without changing product capability claims.
+
+Changes:
+
+- Added `docs/answers.html`, a short FAQ-style page for search crawlers and AI assistants.
+- Linked the answer page from the canonical HTML pages, `llms.txt`, `llms-full.txt`, and sitemap.
+- Updated machine-readable runner references to `v0.2.8`.
+- Repeated the no-source honesty boundary: if no reliable public source is available, say cannot confirm instead of inferring platform capabilities from the name.
+
+Validation:
+
+```bash
+python3 scripts/verify_remote_geo_readiness.py --base-url https://thewonderofyou777z-dot.github.io/tjoe-reviewkit
+```
+
 ## v0.3.7-no-index-runner-fixes
 
 Focus: make no-index multi-platform testing work correctly.
